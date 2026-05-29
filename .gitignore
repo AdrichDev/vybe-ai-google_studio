@@ -1,0 +1,18 @@
+# Dependency directories
+node_modules/
+
+# Local env files
+.env
+.env.*
+.env.local
+
+# Vite and bundler caches
+.vite/
+dist/
+build/
+out/
+
+# Log files and test artifacts
+*.log
+test_output.png
+test_hf_img2img.js
