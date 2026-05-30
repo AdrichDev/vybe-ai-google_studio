@@ -5,11 +5,11 @@
 
 import React, { useState, useEffect } from "react";
 import {
-  LayoutDashboard,
-  Camera,
+  LayoutGrid,
+  Image,
   Film,
-  FolderHeart,
-  Settings2,
+  Folder,
+  Settings,
   Bell,
   Sparkles,
   Cpu,
@@ -21,6 +21,8 @@ import {
   Command,
   Globe,
   FolderLock,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 import { ActiveSection, Project, Asset, ActivityLog } from "./types";
@@ -36,6 +38,23 @@ import ExportModal from "./components/ExportModal";
 export default function App() {
   const [activeSection, setActiveSection] =
     useState<ActiveSection>("dashboard");
+
+  // Sidebar collapsed state with local storage persistence
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(() => {
+    try {
+      return localStorage.getItem("vybe_sidebar_collapsed") === "true";
+    } catch {
+      return false;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("vybe_sidebar_collapsed", String(sidebarCollapsed));
+    } catch (e) {
+      console.error("Failed to save sidebar collapsed state", e);
+    }
+  }, [sidebarCollapsed]);
 
   // Contextual AI Providers State
   const [apiKeys, setApiKeys] = useState(() => {
@@ -219,23 +238,39 @@ export default function App() {
       >
         {/* SIDEBAR LATERAL: Slim Compact Premium Dark Menu */}
         <aside
-          className="w-[240px] bg-[#121212]/30 border-r border-zinc-900/60 p-4 flex flex-col justify-between flex-shrink-0 z-40 backdrop-blur-sm"
+          className={`bg-[#121212]/30 border-r border-zinc-900/60 p-4 flex flex-col justify-between flex-shrink-0 z-40 backdrop-blur-sm transition-all duration-300 ease-in-out ${
+            sidebarCollapsed ? "w-[76px] px-3" : "w-[240px]"
+          }`}
           id="vybe-sidebar"
         >
           <div className="flex flex-col gap-6">
-            {/* Category header "WORKSPACE" */}
-            <div className="px-3 text-[10px] font-semibold text-zinc-500 uppercase tracking-[0.2em] font-mono select-none">
-              WORKSPACE
+            {/* Category header "WORKSPACE" + Collapsible Toggle Tab */}
+            <div className={`flex items-center ${sidebarCollapsed ? "justify-center px-0" : "justify-between px-3"} mb-1 select-none`}>
+              {!sidebarCollapsed && (
+                <span className="text-[10px] font-semibold text-zinc-500 uppercase tracking-[0.2em] font-mono">
+                  WORKSPACE
+                </span>
+              )}
+              <button
+                onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+                className={`p-1.5 rounded-lg hover:bg-zinc-800/60 text-zinc-500 hover:text-white transition-all duration-300 cursor-pointer ${
+                  sidebarCollapsed ? "" : "ml-auto"
+                }`}
+                title={sidebarCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
+                id="sidebar-toggle-btn"
+              >
+                {sidebarCollapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
+              </button>
             </div>
 
             {/* Sidebar Nav Buttons */}
             <nav className="flex flex-col gap-1.5" id="sidebar-navigation">
               {[
-                { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
-                { id: "photo", label: "Photo Studio", icon: Camera },
+                { id: "dashboard", label: "Dashboard", icon: LayoutGrid },
+                { id: "photo", label: "Photo Studio", icon: Image },
                 { id: "video", label: "Video Studio", icon: Film },
-                { id: "assets", label: "Assets", icon: FolderHeart },
-                { id: "settings", label: "Settings", icon: Settings2 },
+                { id: "assets", label: "Assets", icon: Folder },
+                { id: "settings", label: "Settings", icon: Settings },
               ].map((item) => {
                 const IconComp = item.icon;
                 const isActive = activeSection === item.id;
@@ -243,22 +278,25 @@ export default function App() {
                   <button
                     key={item.id}
                     onClick={() => handleNavigate(item.id as ActiveSection)}
-                    className={`group relative w-full flex items-center gap-3.5 px-4 py-3 rounded-xl text-xs font-semibold tracking-wide transition-all duration-300 ease-in-out cursor-pointer ${
+                    className={`group relative w-full flex items-center ${
+                      sidebarCollapsed ? "justify-center h-11 px-0" : "justify-start gap-3.5 px-4 py-3"
+                    } rounded-xl text-xs font-semibold tracking-wide transition-all duration-300 ease-in-out cursor-pointer ${
                       isActive
                         ? "bg-zinc-900/60 text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.02)] border border-zinc-800/20"
                         : "text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/20 border border-transparent"
                     }`}
                     id={`sidebar-link-${item.id}`}
+                    title={sidebarCollapsed ? item.label : undefined}
                   >
                     <IconComp
                       size={15}
-                      className={`transition-colors duration-200 ${
+                      className={`transition-colors duration-200 flex-shrink-0 ${
                         isActive
                           ? "text-white"
                           : "text-zinc-600 group-hover:text-zinc-400"
                       }`}
                     />
-                    <span>{item.label}</span>
+                    {!sidebarCollapsed && <span>{item.label}</span>}
 
                     {/* High Contrast Left-Edge Active Stripe Indicator */}
                     {isActive && (
@@ -274,12 +312,14 @@ export default function App() {
           <div className="border-t border-zinc-900/80 pt-4">
             <button
               onClick={() => handleNavigate("settings")}
-              className="group w-full flex items-center gap-3.5 px-4 py-3 rounded-xl text-xs font-semibold text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/20 transition-all duration-300 ease-in-out cursor-pointer"
+              className={`group w-full flex items-center ${
+                sidebarCollapsed ? "justify-center h-11 px-0" : "justify-start gap-3.5 px-4 py-3"
+              } rounded-xl text-xs font-semibold text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/20 transition-all duration-300 ease-in-out cursor-pointer`}
               title="Information Guide"
               id="help-guide-trigger"
             >
-              <HelpCircle size={15} className="text-zinc-600 group-hover:text-zinc-400" />
-              <span>Guide & Help</span>
+              <HelpCircle size={15} className="text-zinc-600 group-hover:text-zinc-400 flex-shrink-0" />
+              {!sidebarCollapsed && <span>Guide & Help</span>}
             </button>
           </div>
         </aside>
