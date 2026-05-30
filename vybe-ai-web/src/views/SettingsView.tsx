@@ -72,11 +72,11 @@ export default function SettingsView({
 
   return (
     <div
-      className="p-6 max-w-4xl mx-auto space-y-6 h-full overflow-y-auto"
+      className="px-8 py-10 max-w-6xl mx-auto space-y-8 h-full overflow-y-auto"
       id="settings-workspace"
     >
       {/* Header section with Save confirmation feedback status */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-zinc-900 pb-5">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-zinc-900 pb-6">
         <div>
           <h2 className="text-xl font-semibold text-white tracking-tight">
             Parámetros del Sistema
@@ -112,7 +112,7 @@ export default function SettingsView({
       </div>
 
       {/* Main Settings Grid columns */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* 1. Social Orchestration */}
         <div
           className="bg-[#121212] border border-zinc-900 rounded-2xl p-5 space-y-4"
@@ -365,7 +365,7 @@ export default function SettingsView({
             con los flujos creativos de Google AI y OpenAI.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Google AI Studio Row */}
             <div
               className="space-y-2 bg-zinc-950/45 border border-zinc-900/60 p-4 rounded-xl flex flex-col justify-between"
@@ -575,7 +575,7 @@ export default function SettingsView({
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {/* Encoding file format select */}
             <div className="space-y-1.5 bg-zinc-950 p-3 rounded-xl border border-zinc-900">
               <label className="text-[9px] font-mono uppercase tracking-wider text-zinc-500">
