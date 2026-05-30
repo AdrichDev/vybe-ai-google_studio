@@ -219,58 +219,67 @@ export default function App() {
       >
         {/* SIDEBAR LATERAL: Slim Compact Premium Dark Menu */}
         <aside
-          className="w-[72px] sm:w-[84px] bg-[#121212]/30 border-r border-zinc-900/60 p-3.5 flex flex-col justify-between flex-shrink-0 z-40 backdrop-blur-sm"
+          className="w-[240px] bg-[#121212]/30 border-r border-zinc-900/60 p-4 flex flex-col justify-between flex-shrink-0 z-40 backdrop-blur-sm"
           id="vybe-sidebar"
         >
-          {/* Sidebar Nav Buttons */}
-          <nav className="space-y-4" id="sidebar-navigation">
-            {[
-              { id: "dashboard", label: "Panel", icon: LayoutDashboard },
-              { id: "photo", label: "Estudio Foto", icon: Camera },
-              { id: "video", label: "Estudio Video", icon: Film },
-              { id: "assets", label: "Recursos", icon: FolderHeart },
-              { id: "settings", label: "Ajustes", icon: Settings2 },
-            ].map((item) => {
-              const IconComp = item.icon;
-              const isActive = activeSection === item.id;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavigate(item.id as ActiveSection)}
-                  title={item.label}
-                  className={`group relative w-full aspect-square rounded-xl flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
-                    isActive
-                      ? "bg-gradient-to-tr from-[#121212] to-zinc-900 text-[#00D2FF] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_0_15px_rgba(0,0,0,0.6)] border border-zinc-800"
-                      : "text-zinc-500 hover:text-white hover:bg-zinc-900/40 border border-transparent"
-                  }`}
-                  id={`sidebar-link-${item.id}`}
-                >
-                  <IconComp
-                    size={18}
-                    className="transition-transform group-hover:scale-110 duration-200"
-                  />
-                  <span className="text-[8px] font-sans font-medium tracking-tight mt-1 truncate max-w-full">
-                    {item.label}
-                  </span>
+          <div className="flex flex-col gap-6">
+            {/* Category header "WORKSPACE" */}
+            <div className="px-3 text-[10px] font-semibold text-zinc-500 uppercase tracking-[0.2em] font-mono select-none">
+              WORKSPACE
+            </div>
 
-                  {/* High Contrast Accent Indicator Dot */}
-                  {isActive && (
-                    <span className="absolute left-1.5 w-1 h-3 rounded-full bg-gradient-to-b from-[#00D2FF] to-[#9B51E0] pointer-events-none" />
-                  )}
-                </button>
-              );
-            })}
-          </nav>
+            {/* Sidebar Nav Buttons */}
+            <nav className="flex flex-col gap-1.5" id="sidebar-navigation">
+              {[
+                { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+                { id: "photo", label: "Photo Studio", icon: Camera },
+                { id: "video", label: "Video Studio", icon: Film },
+                { id: "assets", label: "Assets", icon: FolderHeart },
+                { id: "settings", label: "Settings", icon: Settings2 },
+              ].map((item) => {
+                const IconComp = item.icon;
+                const isActive = activeSection === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => handleNavigate(item.id as ActiveSection)}
+                    className={`group relative w-full flex items-center gap-3.5 px-4 py-3 rounded-xl text-xs font-semibold tracking-wide transition-all duration-300 ease-in-out cursor-pointer ${
+                      isActive
+                        ? "bg-zinc-900/60 text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.02)] border border-zinc-800/20"
+                        : "text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/20 border border-transparent"
+                    }`}
+                    id={`sidebar-link-${item.id}`}
+                  >
+                    <IconComp
+                      size={15}
+                      className={`transition-colors duration-200 ${
+                        isActive
+                          ? "text-white"
+                          : "text-zinc-600 group-hover:text-zinc-400"
+                      }`}
+                    />
+                    <span>{item.label}</span>
+
+                    {/* High Contrast Left-Edge Active Stripe Indicator */}
+                    {isActive && (
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-6 rounded-r bg-gradient-to-b from-[#00D2FF] to-[#9B51E0] pointer-events-none" />
+                    )}
+                  </button>
+                );
+              })}
+            </nav>
+          </div>
 
           {/* Quick Help Indicator block */}
-          <div className="text-center pt-4 border-t border-zinc-950">
+          <div className="border-t border-zinc-900/80 pt-4">
             <button
               onClick={() => handleNavigate("settings")}
-              className="text-zinc-600 hover:text-zinc-400 p-2 rounded-lg hover:bg-zinc-950 cursor-pointer transition-colors"
+              className="group w-full flex items-center gap-3.5 px-4 py-3 rounded-xl text-xs font-semibold text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/20 transition-all duration-300 ease-in-out cursor-pointer"
               title="Information Guide"
               id="help-guide-trigger"
             >
-              <HelpCircle size={16} />
+              <HelpCircle size={15} className="text-zinc-600 group-hover:text-zinc-400" />
+              <span>Guide & Help</span>
             </button>
           </div>
         </aside>
