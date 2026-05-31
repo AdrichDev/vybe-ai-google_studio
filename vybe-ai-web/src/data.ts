@@ -9,7 +9,7 @@ export const INITIAL_PROJECTS: Project[] = [
   {
     id: 'p1',
     title: 'Cyberpunk Vanguard - Editorial Noir',
-    timestamp: 'Just now',
+    timestamp: 'Ahora mismo',
     format: 'Image',
     image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80',
     status: 'Ready',
@@ -18,7 +18,7 @@ export const INITIAL_PROJECTS: Project[] = [
   {
     id: 'p2',
     title: 'Porsche 911 GT3 - Matte Cyber-Green Accent',
-    timestamp: '2 hours ago',
+    timestamp: 'Hace 2 horas',
     format: 'AI Agent-Generated',
     image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80',
     status: 'Ready',
@@ -26,21 +26,21 @@ export const INITIAL_PROJECTS: Project[] = [
   },
   {
     id: 'p3',
-    title: 'Urban Nomads - Tokyo Streetwear Campaign',
-    timestamp: '1 day ago',
+    title: 'Urban Nomads - Campaña Streetwear Tokyo',
+    timestamp: 'Hace 1 día',
     format: 'Video',
     image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80',
     status: 'Approved',
-    prompt: 'Close-up of elegant streetwear jewelry and reflective fabric threads, slow-motion 60fps pan on bustling Shibuya night streets background, high contrast cinematic grade.'
+    prompt: 'Primer plano de joyería streetwear elegante y hilos de tela reflectante, paneo a cámara lenta 60fps sobre calles de Shibuya de noche, gradación cinemática de alto contraste.'
   },
   {
     id: 'p4',
-    title: 'Golden Hour Neon - Portrait Study',
-    timestamp: '3 days ago',
+    title: 'Golden Hour Neon - Estudio de Retrato',
+    timestamp: 'Hace 3 días',
     format: 'Image',
     image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80',
     status: 'Approved',
-    prompt: 'A dramatic portrait of a woman reflecting golden sunset ambient hues and sharp pink neon tube side-lighting, high-fidelity skin textures, editorial beauty mode.'
+    prompt: 'Retrato dramático de una mujer reflejando matices dorados del atardecer e iluminación lateral de tubo de neón rosa, texturas de piel de alta fidelidad, modo editorial de belleza.'
   }
 ];
 
@@ -108,36 +108,36 @@ export const INITIAL_LOGS: ActivityLog[] = [
   {
     id: 'l1',
     agent: 'OpenClaw Agent',
-    action: 'Veo 3.1 rendering luxury_reel_porsche.mp4 (Frame 120/450)',
-    timestamp: 'now',
+    action: 'Veo 3.1 renderizando luxury_reel_porsche.mp4 (Fotograma 120/450)',
+    timestamp: 'ahora',
     status: 'running'
   },
   {
     id: 'l2',
     agent: 'n8n Publisher',
-    action: 'TikTok API pipeline initialized for @vibe_studio_ai',
-    timestamp: '1m ago',
+    action: 'Pipeline de TikTok API inicializado para @vibe_studio_ai',
+    timestamp: 'hace 1m',
     status: 'completed'
   },
   {
     id: 'l3',
     agent: 'GPT-5.5 Copywright',
-    action: 'Optimized creative hashtags & caption copy for Instagram feed',
-    timestamp: '3m ago',
+    action: 'Hashtags creativos y descripción de Instagram optimizados',
+    timestamp: 'hace 3m',
     status: 'completed'
   },
   {
     id: 'l4',
     agent: 'Midjourney Refiner',
-    action: 'Upscaled "Cyberpunk Vanguard" RAW to 16k Ultra High Resolution',
-    timestamp: '15m ago',
+    action: 'Escalado "Cyberpunk Vanguard" RAW a 16K Ultra Alta Resolución',
+    timestamp: 'hace 15m',
     status: 'completed'
   },
   {
     id: 'l5',
     agent: 'ElevenLabs Voice',
-    action: 'Synthesizing voiceover parameters: [Narrator, Deep, British Accent, Calm Tone]',
-    timestamp: '25m ago',
+    action: 'Sintetizando parámetros de voz: [Narrador, Grave, Acento Británico, Tono Calmado]',
+    timestamp: 'hace 25m',
     status: 'completed'
   }
 ];

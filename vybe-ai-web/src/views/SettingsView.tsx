@@ -19,6 +19,7 @@ import {
   ShieldCheck,
   Eye,
   EyeOff,
+  Sparkles,
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -27,11 +28,13 @@ interface SettingsViewProps {
   setApiKeys: React.Dispatch<
     React.SetStateAction<{ google: string; openai: string; huggingface: string }>
   >;
+  theme?: string;
 }
 
 export default function SettingsView({
   apiKeys,
   setApiKeys,
+  theme = "dark",
 }: SettingsViewProps) {
   const [googleFeedback, setGoogleFeedback] = useState(false);
   const [openaiFeedback, setOpenaiFeedback] = useState(false);
@@ -39,17 +42,25 @@ export default function SettingsView({
   const [showGoogleKey, setShowGoogleKey] = useState(false);
   const [showOpenaiKey, setShowOpenaiKey] = useState(false);
   const [showHfKey, setShowHfKey] = useState(false);
-  const [socials, setSocials] = useState({
-    instagram: true,
-    tiktok: true,
-    youtube: false,
+
+  const [socials, setSocials] = useState(() => {
+    const saved = localStorage.getItem("vybe_socials");
+    return saved ? JSON.parse(saved) : { instagram: true, tiktok: true, youtube: false };
   });
 
-  const [aiPreferences, setAiPreferences] = useState({
-    model: "gemini-3-pro",
-    quality: "ultra-8k",
-    temp: 0.8,
+  const [socialHandles, setSocialHandles] = useState(() => {
+    const saved = localStorage.getItem("vybe_social_handles");
+    return saved ? JSON.parse(saved) : { instagram: "@adrian.vybe", tiktok: "@adrian.vybe", youtube: "" };
   });
+
+  const [lastHandles, setLastHandles] = useState(() => {
+    const saved = localStorage.getItem("vybe_last_handles");
+    return saved ? JSON.parse(saved) : { instagram: "@adrian.vybe", tiktok: "@adrian.vybe", youtube: "@adrian.shorts" };
+  });
+
+  const [activeSocialModal, setActiveSocialModal] = useState<"instagram" | "tiktok" | "youtube" | null>(null);
+  const [socialModalOption, setSocialModalOption] = useState<"last" | "new">("last");
+  const [newHandleInput, setNewHandleInput] = useState("");
 
   const [exports, setExports] = useState({
     encoding: "prores",
@@ -59,8 +70,49 @@ export default function SettingsView({
 
   const [saveFeedback, setSaveFeedback] = useState(false);
 
-  const toggleSocial = (plat: "instagram" | "tiktok" | "youtube") => {
-    setSocials((prev) => ({ ...prev, [plat]: !prev[plat] }));
+  const handleSwitchClick = (platform: "instagram" | "tiktok" | "youtube") => {
+    if (socials[platform]) {
+      handleDisconnectSocial(platform);
+    } else {
+      setActiveSocialModal(platform);
+      setSocialModalOption("last");
+      setNewHandleInput("");
+    }
+  };
+
+  const handleDisconnectSocial = (platform: "instagram" | "tiktok" | "youtube") => {
+    const newSocials = { ...socials, [platform]: false };
+    setSocials(newSocials);
+    localStorage.setItem("vybe_socials", JSON.stringify(newSocials));
+  };
+
+  const handleSaveSocialConnection = () => {
+    if (!activeSocialModal) return;
+    
+    let handleToUse = "";
+    if (socialModalOption === "last") {
+      handleToUse = lastHandles[activeSocialModal] || "@adrian.vybe";
+    } else {
+      const sanitized = newHandleInput.trim();
+      handleToUse = sanitized.startsWith("@") ? sanitized : `@${sanitized}`;
+      if (handleToUse === "@") {
+        handleToUse = lastHandles[activeSocialModal] || "@adrian.vybe";
+      }
+    }
+
+    const newSocials = { ...socials, [activeSocialModal]: true };
+    const newHandles = { ...socialHandles, [activeSocialModal]: handleToUse };
+    const newLast = { ...lastHandles, [activeSocialModal]: handleToUse };
+
+    setSocials(newSocials);
+    setSocialHandles(newHandles);
+    setLastHandles(newLast);
+
+    localStorage.setItem("vybe_socials", JSON.stringify(newSocials));
+    localStorage.setItem("vybe_social_handles", JSON.stringify(newHandles));
+    localStorage.setItem("vybe_last_handles", JSON.stringify(newLast));
+
+    setActiveSocialModal(null);
   };
 
   const handleSaveSettings = () => {
@@ -76,14 +128,13 @@ export default function SettingsView({
       id="settings-workspace"
     >
       {/* Header section with Save confirmation feedback status */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-zinc-900 pb-6">
+      <div className={`flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b ${theme === 'light' ? 'border-zinc-200' : 'border-zinc-900'} pb-6`}>
         <div>
-          <h2 className="text-xl font-semibold text-white tracking-tight">
-            Parámetros del Sistema
+          <h2 className={`text-xl sm:text-2xl font-bold ${theme === 'light' ? 'text-zinc-900' : 'text-white'} tracking-tight`}>
+            Ajustes / Configurá tu estudio a tu manera.
           </h2>
-          <p className="text-xs text-zinc-500">
-            Configuración global de orquestación, tokens sociales y parámetros
-            de enrutamiento de IA multi-modelo.
+          <p className={`text-xs ${theme === 'light' ? 'text-zinc-500' : 'text-zinc-500'}`}>
+            Configuración global de orquestación, tokens sociales y enrutamiento de credenciales premium.
           </p>
         </div>
 
@@ -94,7 +145,7 @@ export default function SettingsView({
                 initial={{ opacity: 0, x: 5 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 5 }}
-                className="text-xs text-emerald-400 font-mono flex items-center gap-1.5"
+                className="text-xs text-emerald-500 font-mono flex items-center gap-1.5"
               >
                 <CheckCircle2 size={13} /> Guardado en el clúster local
               </motion.span>
@@ -102,11 +153,11 @@ export default function SettingsView({
           </AnimatePresence>
           <button
             onClick={handleSaveSettings}
-            className="px-4 py-2 bg-gradient-to-r from-[#00D2FF] to-[#9B51E0] text-white text-xs font-semibold rounded-xl hover:shadow-[0_0_12px_rgba(0,210,255,0.25)] hover:opacity-95 transition-all cursor-pointer active:scale-95 flex items-center gap-1.5"
+            className="px-5 py-2.5 bg-gradient-to-r from-[#00D2FF] to-[#9B51E0] text-white text-xs font-semibold rounded-xl hover:shadow-[0_0_12px_rgba(0,210,255,0.25)] hover:opacity-95 transition-all cursor-pointer active:scale-95 flex items-center gap-1.5"
             id="save-settings-btn"
           >
-            <Save size={13} />
-            <span>Aplicar Preferencias</span>
+            <Save size={16} />
+            <span>Aplicar Cambios</span>
           </button>
         </div>
       </div>
@@ -115,54 +166,54 @@ export default function SettingsView({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* 1. Social Orchestration */}
         <div
-          className="bg-[#121212] border border-zinc-900 rounded-2xl p-5 space-y-4"
+          className={`${theme === 'light' ? 'bg-white border-zinc-200 text-zinc-900 shadow-[0_4px_20px_rgba(0,0,0,0.03)]' : 'bg-[#121212] border-zinc-900/60 text-white'} border rounded-2xl p-6.5 flex flex-col justify-between md:col-span-2`}
           id="section-social-orchestration"
         >
-          <div className="flex items-center gap-2 border-b border-zinc-900 pb-3">
-            <Share2 size={15} className="text-[#00D2FF]" />
-            <h3 className="text-xs font-semibold text-white uppercase tracking-wider">
-              Orquestación de API Social
+          <div className="space-y-1 pb-3">
+            <h3 className={`text-xl sm:text-[22px] font-bold ${theme === 'light' ? 'text-zinc-950' : 'text-white'} tracking-tight`}>
+              Orquestación Social
             </h3>
+            <p className={`text-[13.5px] ${theme === 'light' ? 'text-zinc-500' : 'text-zinc-500'} font-medium`}>
+              Conectá tus canales para publicar directamente.
+            </p>
           </div>
-          <p className="text-[11px] text-zinc-500 leading-relaxed">
-            Configure conexiones seguras directas para publicar contenido
-            aprobado por humanos en redes corporativas de forma automatizada.
-          </p>
 
-          <div className="space-y-3">
+          <div className={`divide-y ${theme === 'light' ? 'divide-zinc-100' : 'divide-zinc-900/40'} flex-1 flex flex-col justify-between`}>
             {/* Instagram */}
-            <div className="flex items-center justify-between p-3.5 bg-zinc-950/50 rounded-xl border border-zinc-900">
-              <div className="flex items-center gap-3">
-                <Instagram size={16} className="text-purple-400" />
+            <div className="flex items-center justify-between py-5.5 first:pt-2 last:pb-0">
+              <div className="flex items-center gap-4">
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${theme === 'light' ? 'bg-zinc-100 border-zinc-200 shadow-sm' : 'bg-zinc-900/60 border-zinc-800/45'}`}>
+                  <Instagram size={20} className={theme === 'light' ? 'text-zinc-700' : 'text-white'} />
+                </div>
                 <div>
-                  <div className="text-xs font-medium text-white">
-                    API de Instagram Reels
+                  <div className={`text-[15px] sm:text-base font-bold ${theme === 'light' ? 'text-zinc-900' : 'text-white'}`}>
+                    Instagram
                   </div>
-                  <div className="text-[9px] text-zinc-500 font-mono">
-                    @instagram_vibe_partner
+                  <div className={`text-[13px] ${theme === 'light' ? 'text-zinc-400' : 'text-zinc-500'} font-mono mt-0.5`}>
+                    {socials.instagram ? socialHandles.instagram : "No vinculado"}
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4.5">
                 <span
-                  className={`text-[8px] font-mono px-2 py-0.5 rounded ${
+                  className={`text-[10px] font-sans font-black tracking-wide px-3 py-1.5 rounded-lg border transition-all duration-300 ${
                     socials.instagram
-                      ? "text-emerald-400 bg-emerald-500/10 border border-emerald-500/20"
-                      : "text-zinc-600"
+                      ? "text-emerald-500 bg-emerald-500/10 border-emerald-500/20"
+                      : (theme === 'light' ? "text-zinc-400 bg-zinc-200 border-zinc-300" : "text-zinc-550 bg-zinc-900/50 border-zinc-800/40")
                   }`}
                 >
-                  {socials.instagram ? "CONECTADO" : "MUTADO"}
+                  {socials.instagram ? "CONECTADO" : "DESCONECTADO"}
                 </span>
                 <button
-                  onClick={() => toggleSocial("instagram")}
-                  className={`w-9 h-5 rounded-full transition-all relative cursor-pointer ${
-                    socials.instagram ? "bg-[#00D2FF]" : "bg-zinc-800"
+                  onClick={() => handleSwitchClick("instagram")}
+                  className={`w-11 h-6 rounded-full transition-all duration-300 relative cursor-pointer ${
+                    socials.instagram ? "bg-gradient-to-r from-[#00D2FF] to-[#9B51E0]" : (theme === 'light' ? "bg-zinc-200" : "bg-zinc-800")
                   }`}
                   id="switch-instagram"
                 >
                   <span
-                    className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition-all ${
-                      socials.instagram ? "left-4.5" : "left-0.5"
+                    className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-all duration-300 shadow-[0_2px_4px_rgba(0,0,0,0.2)] ${
+                      socials.instagram ? "left-6" : "left-1"
                     }`}
                   />
                 </button>
@@ -170,237 +221,133 @@ export default function SettingsView({
             </div>
 
             {/* TikTok */}
-            <div className="flex items-center justify-between p-3.5 bg-zinc-950/50 rounded-xl border border-zinc-900">
-              <div className="flex items-center gap-3">
-                {/* TikTok logo simulation with Video icon */}
-                <Tv size={16} className="text-teal-400" />
+            <div className="flex items-center justify-between py-5.5">
+              <div className="flex items-center gap-4">
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${theme === 'light' ? 'bg-zinc-100 border-zinc-200 shadow-sm' : 'bg-zinc-900/60 border-zinc-800/45'}`}>
+                  <Tv size={20} className={theme === 'light' ? 'text-zinc-700' : 'text-white'} />
+                </div>
                 <div>
-                  <div className="text-xs font-medium text-white">
-                    Flujo de TikTok Creator
+                  <div className={`text-[15px] sm:text-base font-bold ${theme === 'light' ? 'text-zinc-900' : 'text-white'}`}>
+                    TikTok
                   </div>
-                  <div className="text-[9px] text-zinc-500 font-mono">
-                    @vybe_creator_org
+                  <div className={`text-[13px] ${theme === 'light' ? 'text-zinc-400' : 'text-zinc-500'} font-mono mt-0.5`}>
+                    {socials.tiktok ? socialHandles.tiktok : "No vinculado"}
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4.5">
                 <span
-                  className={`text-[8px] font-mono px-2 py-0.5 rounded ${
+                  className={`text-[10px] font-sans font-black tracking-wide px-3 py-1.5 rounded-lg border transition-all duration-300 ${
                     socials.tiktok
-                      ? "text-emerald-400 bg-emerald-500/10 border border-emerald-500/20"
-                      : "text-zinc-600"
+                      ? "text-emerald-500 bg-emerald-500/10 border-emerald-500/20"
+                      : (theme === 'light' ? "text-zinc-400 bg-zinc-200 border-zinc-300" : "text-zinc-550 bg-zinc-900/50 border-zinc-800/40")
                   }`}
                 >
-                  {socials.tiktok ? "CONECTADO" : "MUTADO"}
+                  {socials.tiktok ? "CONECTADO" : "DESCONECTADO"}
                 </span>
                 <button
-                  onClick={() => toggleSocial("tiktok")}
-                  className={`w-9 h-5 rounded-full transition-all relative cursor-pointer ${
-                    socials.tiktok ? "bg-[#00D2FF]" : "bg-zinc-800"
+                  onClick={() => handleSwitchClick("tiktok")}
+                  className={`w-11 h-6 rounded-full transition-all duration-300 relative cursor-pointer ${
+                    socials.tiktok ? "bg-gradient-to-r from-[#00D2FF] to-[#9B51E0]" : (theme === 'light' ? "bg-zinc-200" : "bg-zinc-800")
                   }`}
                   id="switch-tiktok"
                 >
                   <span
-                    className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition-all ${
-                      socials.tiktok ? "left-4.5" : "left-0.5"
+                    className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-all duration-300 shadow-[0_2px_4px_rgba(0,0,0,0.2)] ${
+                      socials.tiktok ? "left-6" : "left-1"
                     }`}
                   />
                 </button>
               </div>
             </div>
 
-            {/* YouTube */}
-            <div className="flex items-center justify-between p-3.5 bg-zinc-950/50 rounded-xl border border-zinc-900">
-              <div className="flex items-center gap-3">
-                <Youtube size={16} className="text-red-500" />
+            {/* YouTube Shorts */}
+            <div className="flex items-center justify-between py-5.5 last:pb-0">
+              <div className="flex items-center gap-4">
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${theme === 'light' ? 'bg-zinc-100 border-zinc-200 shadow-sm' : 'bg-zinc-900/60 border-zinc-800/45'}`}>
+                  <Youtube size={20} className={theme === 'light' ? 'text-zinc-700' : 'text-white'} />
+                </div>
                 <div>
-                  <div className="text-xs font-medium text-white">
-                    Matriz de YouTube Shorts
+                  <div className={`text-[15px] sm:text-base font-bold ${theme === 'light' ? 'text-zinc-900' : 'text-white'}`}>
+                    YouTube Shorts
                   </div>
-                  <div className="text-[9px] text-zinc-500 font-mono">
-                    No Vinculado
+                  <div className={`text-[13px] ${theme === 'light' ? 'text-zinc-400' : 'text-zinc-500'} font-mono mt-0.5`}>
+                    {socials.youtube ? socialHandles.youtube : "No vinculado"}
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4.5">
                 <span
-                  className={`text-[8px] font-mono px-2 py-0.5 rounded ${
+                  className={`text-[10px] font-sans font-black tracking-wide px-3 py-1.5 rounded-lg border transition-all duration-300 ${
                     socials.youtube
-                      ? "text-emerald-400 bg-emerald-500/10 border border-emerald-500/20"
-                      : "text-zinc-600 bg-zinc-900/60 border border-zinc-800"
+                      ? "text-emerald-500 bg-emerald-500/10 border-emerald-500/20"
+                      : (theme === 'light' ? "text-zinc-400 bg-zinc-200 border-zinc-300" : "text-zinc-550 bg-zinc-900/50 border-zinc-800/40")
                   }`}
                 >
-                  {socials.youtube ? "CONECTADO" : "EN ESPERA"}
+                  {socials.youtube ? "CONECTADO" : "DESCONECTADO"}
                 </span>
                 <button
-                  onClick={() => toggleSocial("youtube")}
-                  className={`w-9 h-5 rounded-full transition-all relative cursor-pointer ${
-                    socials.youtube ? "bg-[#00D2FF]" : "bg-zinc-800"
+                  onClick={() => handleSwitchClick("youtube")}
+                  className={`w-11 h-6 rounded-full transition-all duration-300 relative cursor-pointer ${
+                    socials.youtube ? "bg-gradient-to-r from-[#00D2FF] to-[#9B51E0]" : (theme === 'light' ? "bg-zinc-200" : "bg-zinc-800")
                   }`}
                   id="switch-youtube"
                 >
                   <span
-                    className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition-all ${
-                      socials.youtube ? "left-4.5" : "left-0.5"
+                    className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-all duration-300 shadow-[0_2px_4px_rgba(0,0,0,0.2)] ${
+                      socials.youtube ? "left-6" : "left-1"
                     }`}
                   />
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 2. AI Model Preferences */}
-        <div
-          className="bg-[#121212] border border-zinc-900 rounded-2xl p-5 space-y-4"
-          id="section-ai-models"
-        >
-          <div className="flex items-center gap-2 border-b border-zinc-900 pb-3">
-            <Brain size={15} className="text-[#9B51E0]" />
-            <h3 className="text-xs font-semibold text-white uppercase tracking-wider">
-              Preferencias de Modelos de IA
-            </h3>
-          </div>
-          <p className="text-[11px] text-zinc-500 leading-relaxed">
-            Ajuste de forma contextual las redes neuronales principales, las
-            relaciones de muestreo y los motores de IA.
-          </p>
-
-          <div className="space-y-4">
-            {/* Preferred Model */}
-            <div className="space-y-1.5 animate-duration-150">
-              <label className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 block">
-                Motor de Generación
-              </label>
-              <select
-                value={aiPreferences.model}
-                onChange={(e) =>
-                  setAiPreferences((prev) => ({
-                    ...prev,
-                    model: e.target.value,
-                  }))
-                }
-                className="w-full text-xs text-zinc-300 bg-zinc-950 border border-zinc-900 rounded-xl py-2.5 px-3 focus:outline-none focus:border-zinc-800"
-                id="select-ai-engine"
-              >
-                <option value="gemini-3-pro">
-                  Gemini 3.5 Pro (Súper Resolución Multimodal)
-                </option>
-                <option value="gpt-5-5">
-                  OpenAI GPT-5.5 (Agente Cognitivo)
-                </option>
-                <option value="veo-3-master">
-                  Motor de Video Cinemático Veo v3.1
-                </option>
-              </select>
-            </div>
-
-            {/* Quality Standard */}
-            <div className="space-y-1.5">
-              <label className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 block">
-                Resolución de Renderizado
-              </label>
-              <select
-                value={aiPreferences.quality}
-                onChange={(e) =>
-                  setAiPreferences((prev) => ({
-                    ...prev,
-                    quality: e.target.value,
-                  }))
-                }
-                className="w-full text-xs text-zinc-300 bg-zinc-950 border border-zinc-900 rounded-xl py-2.5 px-3 focus:outline-none focus:border-zinc-800"
-                id="select-ai-resolution"
-              >
-                <option value="ultra-8k">
-                  Ultra HD 8K Máster (150 ciclos, Render lento)
-                </option>
-                <option value="pro-4k">
-                  Pro Quad HD 4K (90 ciclos, Estándar)
-                </option>
-                <option value="fast-1080">
-                  Borrador Vertical 1080p (Rápido, 30 ciclos)
-                </option>
-              </select>
-            </div>
-
-            {/* Temperature Slider */}
-            <div className="space-y-1.5 pt-1">
-              <div className="flex justify-between items-center text-[10px] font-mono text-zinc-400">
-                <span>Variabilidad Creativa (Temp)</span>
-                <span className="text-[#00D2FF]">{aiPreferences.temp}</span>
-              </div>
-              <input
-                type="range"
-                min="0.2"
-                max="1.5"
-                step="0.1"
-                value={aiPreferences.temp}
-                onChange={(e) =>
-                  setAiPreferences((prev) => ({
-                    ...prev,
-                    temp: parseFloat(e.target.value),
-                  }))
-                }
-                className="w-full accent-[#00D2FF] bg-zinc-950 rounded-lg cursor-pointer h-1"
-                id="settings-temp-slider"
-              />
             </div>
           </div>
         </div>
 
         {/* AI Infrastructure & Credentials */}
         <div
-          className="bg-[#121212] border border-zinc-900 rounded-2xl p-5 space-y-5 md:col-span-2"
+          className={`${theme === 'light' ? 'bg-white border-zinc-200 text-zinc-900 shadow-[0_4px_20px_rgba(0,0,0,0.03)]' : 'bg-[#121212] border border-zinc-900/60 text-white'} border rounded-2xl p-6.5 space-y-6 md:col-span-2`}
           id="section-ai-credentials"
         >
-          <div className="flex items-center gap-2 border-b border-zinc-900 pb-3">
-            <Sliders size={15} className="text-[#00D2FF]" />
-            <h3 className="text-xs font-semibold text-white uppercase tracking-wider">
-              Infraestructura y Credenciales de IA
+          <div className="space-y-1 pb-2">
+            <h3 className={`text-xl sm:text-[22px] font-bold ${theme === 'light' ? 'text-zinc-950' : 'text-white'} tracking-tight`}>
+              Infraestructura IA y Credenciales
             </h3>
+            <p className={`text-[13.5px] ${theme === 'light' ? 'text-zinc-400' : 'text-zinc-500'} font-medium`}>
+              Usá tus propias claves. Cada estudio puede usar un proveedor diferente.
+            </p>
           </div>
-          <p className="text-[11px] text-zinc-500 leading-relaxed">
-            Administre de forma segura sus integraciones de API localmente.
-            Ingrese sus claves para conectar el espacio de trabajo directamente
-            con los flujos creativos de Google AI y OpenAI.
-          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Google AI Studio Row */}
-            <div
-              className="space-y-2 bg-zinc-950/45 border border-zinc-900/60 p-4 rounded-xl flex flex-col justify-between"
-              id="row-google-credentials"
-            >
+          <div className="space-y-6">
+            {/* Google AI Studio Block */}
+            <div className="space-y-3" id="row-google-credentials">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold text-white">
-                  Google AI Studio
-                </span>
-                <div className="flex items-center gap-2 h-5">
-                  <AnimatePresence>
-                    {googleFeedback && (
-                      <motion.span
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.9 }}
-                        className="text-[9px] font-mono text-emerald-400"
-                      >
-                        Clave guardada localmente
-                      </motion.span>
-                    )}
-                  </AnimatePresence>
-                  <span
-                    className={`text-[9px] font-mono px-2 py-0.5 rounded leading-none transition-all duration-300 ${
-                      apiKeys.google
-                        ? "text-emerald-500 bg-emerald-500/10 border border-emerald-500/20"
-                        : "text-zinc-400 bg-zinc-800/60"
-                    }`}
-                  >
-                    {apiKeys.google ? "Conectado" : "Falta Clave"}
-                  </span>
+                <div className="flex items-center gap-3">
+                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center border ${theme === 'light' ? 'bg-zinc-100 border-zinc-200 shadow-sm' : 'bg-zinc-900/60 border-zinc-800/45'}`}>
+                    <Sparkles size={18} className={theme === 'light' ? 'text-zinc-700' : 'text-white'} />
+                  </div>
+                  <div>
+                    <span className={`text-[15px] sm:text-base font-bold ${theme === 'light' ? 'text-zinc-900' : 'text-white'} block`}>
+                      Google AI Studio
+                    </span>
+                    <span className={`text-[12px] ${theme === 'light' ? 'text-zinc-400' : 'text-zinc-500'} block mt-0.5`}>
+                      Almacenado localmente en esta sesión.
+                    </span>
+                  </div>
                 </div>
+                
+                <span
+                  className={`text-[10px] font-sans font-black tracking-wide px-3 py-1.5 rounded-lg border transition-all duration-350 ${
+                    apiKeys.google
+                      ? "text-emerald-500 bg-emerald-500/10 border-emerald-500/20"
+                      : (theme === 'light' ? "text-zinc-450 bg-zinc-200 border-zinc-300" : "text-zinc-550 bg-zinc-900/50 border-zinc-800/40")
+                  }`}
+                >
+                  {apiKeys.google ? "CONECTADO" : "CLAVE FALTANTE"}
+                </span>
               </div>
 
-              <div className="relative flex items-center mt-1.5 focus-within:border-zinc-700">
+              <div className="relative flex items-center">
                 <input
                   type={showGoogleKey ? "text" : "password"}
                   value={apiKeys.google}
@@ -416,56 +363,50 @@ export default function SettingsView({
                       (e.target as HTMLInputElement).blur();
                     }
                   }}
-                  placeholder="Ingrese GEMINI_API_KEY"
-                  className="w-full text-xs text-zinc-300 bg-zinc-900 border border-zinc-800/80 rounded-xl py-2.5 pl-3 pr-10 focus:outline-none focus:border-zinc-700 transition-all duration-300"
+                  placeholder="Ingresá GEMINI_API_KEY"
+                  className={`w-full text-sm font-medium ${theme === 'light' ? 'text-zinc-900 bg-white border-zinc-200 focus:border-zinc-400' : 'text-zinc-300 bg-zinc-950 border-zinc-900/60 focus:border-zinc-750'} border rounded-xl py-3 px-4.5 pr-11 transition-all duration-300 focus:outline-none font-mono`}
                   id="google-api-key-input"
                 />
                 <button
                   type="button"
                   onClick={() => setShowGoogleKey(!showGoogleKey)}
-                  className="absolute right-3.5 text-zinc-500 hover:text-zinc-300 cursor-pointer p-1 rounded-lg transition-colors flex items-center justify-center"
+                  className="absolute right-3.5 text-zinc-500 hover:text-zinc-300 cursor-pointer p-1.5 rounded-lg transition-colors flex items-center justify-center animate-duration-150"
                   id="google-key-eye-toggle"
                 >
-                  {showGoogleKey ? <EyeOff size={14} /> : <Eye size={14} />}
+                  {showGoogleKey ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
             </div>
 
-            {/* OpenAI API Row */}
-            <div
-              className="space-y-2 bg-zinc-950/45 border border-zinc-900/60 p-4 rounded-xl flex flex-col justify-between"
-              id="row-openai-credentials"
-            >
+            {/* OpenAI API Block */}
+            <div className="space-y-3" id="row-openai-credentials">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold text-white">
-                  OpenAI API
-                </span>
-                <div className="flex items-center gap-2 h-5">
-                  <AnimatePresence>
-                    {openaiFeedback && (
-                      <motion.span
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.9 }}
-                        className="text-[9px] font-mono text-emerald-400"
-                      >
-                        Clave guardada localmente
-                      </motion.span>
-                    )}
-                  </AnimatePresence>
-                  <span
-                    className={`text-[9px] font-mono px-2 py-0.5 rounded leading-none transition-all duration-300 ${
-                      apiKeys.openai
-                        ? "text-emerald-500 bg-emerald-500/10 border border-emerald-500/20"
-                        : "text-zinc-400 bg-zinc-800/60"
-                    }`}
-                  >
-                    {apiKeys.openai ? "Conectado" : "Falta Clave"}
-                  </span>
+                <div className="flex items-center gap-3">
+                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center border ${theme === 'light' ? 'bg-zinc-100 border-zinc-200 shadow-sm' : 'bg-zinc-900/60 border-zinc-800/45'}`}>
+                    <Brain size={18} className={theme === 'light' ? 'text-zinc-700' : 'text-white'} />
+                  </div>
+                  <div>
+                    <span className={`text-[15px] sm:text-base font-bold ${theme === 'light' ? 'text-zinc-900' : 'text-white'} block`}>
+                      OpenAI API
+                    </span>
+                    <span className={`text-[12px] ${theme === 'light' ? 'text-zinc-400' : 'text-zinc-500'} block mt-0.5`}>
+                      Almacenado localmente en esta sesión.
+                    </span>
+                  </div>
                 </div>
+                
+                <span
+                  className={`text-[10px] font-sans font-black tracking-wide px-3 py-1.5 rounded-lg border transition-all duration-350 ${
+                    apiKeys.openai
+                      ? "text-emerald-500 bg-emerald-500/10 border-emerald-500/20"
+                      : (theme === 'light' ? "text-zinc-450 bg-zinc-200 border-zinc-300" : "text-zinc-550 bg-zinc-900/50 border-zinc-800/40")
+                  }`}
+                >
+                  {apiKeys.openai ? "CONECTADO" : "CLAVE FALTANTE"}
+                </span>
               </div>
 
-              <div className="relative flex items-center mt-1.5 focus-within:border-zinc-700">
+              <div className="relative flex items-center">
                 <input
                   type={showOpenaiKey ? "text" : "password"}
                   value={apiKeys.openai}
@@ -481,56 +422,50 @@ export default function SettingsView({
                       (e.target as HTMLInputElement).blur();
                     }
                   }}
-                  placeholder="Ingrese OPENAI_API_KEY"
-                  className="w-full text-xs text-zinc-300 bg-zinc-900 border border-zinc-800/80 rounded-xl py-2.5 pl-3 pr-10 focus:outline-none focus:border-zinc-700 transition-all duration-300"
+                  placeholder="Ingresá OPENAI_API_KEY"
+                  className={`w-full text-sm font-medium ${theme === 'light' ? 'text-zinc-900 bg-white border-zinc-200 focus:border-zinc-400' : 'text-zinc-300 bg-zinc-950 border-zinc-900/60 focus:border-zinc-750'} border rounded-xl py-3 px-4.5 pr-11 transition-all duration-300 focus:outline-none font-mono`}
                   id="openai-api-key-input"
                 />
                 <button
                   type="button"
                   onClick={() => setShowOpenaiKey(!showOpenaiKey)}
-                  className="absolute right-3.5 text-zinc-500 hover:text-zinc-300 cursor-pointer p-1 rounded-lg transition-colors flex items-center justify-center"
+                  className="absolute right-3.5 text-zinc-500 hover:text-zinc-300 cursor-pointer p-1.5 rounded-lg transition-colors flex items-center justify-center animate-duration-150"
                   id="openai-key-eye-toggle"
                 >
-                  {showOpenaiKey ? <EyeOff size={14} /> : <Eye size={14} />}
+                  {showOpenaiKey ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
             </div>
 
-            {/* Hugging Face API Row */}
-            <div
-              className="space-y-2 bg-zinc-950/45 border border-zinc-900/60 p-4 rounded-xl flex flex-col justify-between"
-              id="row-hf-credentials"
-            >
+            {/* Hugging Face Block */}
+            <div className="space-y-3" id="row-hf-credentials">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold text-white">
-                  Hugging Face (FLUX)
-                </span>
-                <div className="flex items-center gap-2 h-5">
-                  <AnimatePresence>
-                    {hfFeedback && (
-                      <motion.span
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.9 }}
-                        className="text-[9px] font-mono text-emerald-400"
-                      >
-                        Clave guardada localmente
-                      </motion.span>
-                    )}
-                  </AnimatePresence>
-                  <span
-                    className={`text-[9px] font-mono px-2 py-0.5 rounded leading-none transition-all duration-300 ${
-                      apiKeys.huggingface
-                        ? "text-emerald-500 bg-emerald-500/10 border border-emerald-500/20"
-                        : "text-zinc-400 bg-zinc-800/60"
-                    }`}
-                  >
-                    {apiKeys.huggingface ? "Conectado" : "Falta Clave"}
-                  </span>
+                <div className="flex items-center gap-3">
+                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center border ${theme === 'light' ? 'bg-zinc-100 border-zinc-200 shadow-sm' : 'bg-zinc-900/60 border-zinc-800/45'}`}>
+                    <Sliders size={18} className={theme === 'light' ? 'text-zinc-700' : 'text-white'} />
+                  </div>
+                  <div>
+                    <span className={`text-[15px] sm:text-base font-bold ${theme === 'light' ? 'text-zinc-900' : 'text-white'} block`}>
+                      Hugging Face
+                    </span>
+                    <span className={`text-[12px] ${theme === 'light' ? 'text-zinc-400' : 'text-zinc-500'} block mt-0.5`}>
+                      Almacenado localmente en esta sesión.
+                    </span>
+                  </div>
                 </div>
+                
+                <span
+                  className={`text-[10px] font-sans font-black tracking-wide px-3 py-1.5 rounded-lg border transition-all duration-350 ${
+                    apiKeys.huggingface
+                      ? "text-emerald-500 bg-emerald-500/10 border-emerald-500/20"
+                      : (theme === 'light' ? "text-zinc-450 bg-zinc-200 border-zinc-300" : "text-zinc-550 bg-zinc-900/50 border-zinc-800/40")
+                  }`}
+                >
+                  {apiKeys.huggingface ? "CONECTADO" : "CLAVE FALTANTE"}
+                </span>
               </div>
 
-              <div className="relative flex items-center mt-1.5 focus-within:border-zinc-700">
+              <div className="relative flex items-center">
                 <input
                   type={showHfKey ? "text" : "password"}
                   value={apiKeys.huggingface}
@@ -546,17 +481,17 @@ export default function SettingsView({
                       (e.target as HTMLInputElement).blur();
                     }
                   }}
-                  placeholder="Ingrese HF_TOKEN"
-                  className="w-full text-xs text-zinc-300 bg-zinc-900 border border-zinc-800/80 rounded-xl py-2.5 pl-3 pr-10 focus:outline-none focus:border-zinc-700 transition-all duration-300"
+                  placeholder="Ingresá HF_TOKEN"
+                  className={`w-full text-sm font-medium ${theme === 'light' ? 'text-zinc-900 bg-white border-zinc-200 focus:border-zinc-400' : 'text-zinc-300 bg-zinc-950 border-zinc-900/60 focus:border-zinc-750'} border rounded-xl py-3 px-4.5 pr-11 transition-all duration-300 focus:outline-none font-mono`}
                   id="hf-api-key-input"
                 />
                 <button
                   type="button"
                   onClick={() => setShowHfKey(!showHfKey)}
-                  className="absolute right-3.5 text-zinc-500 hover:text-zinc-300 cursor-pointer p-1 rounded-lg transition-colors flex items-center justify-center"
+                  className="absolute right-3.5 text-zinc-500 hover:text-zinc-300 cursor-pointer p-1.5 rounded-lg transition-colors flex items-center justify-center animate-duration-150"
                   id="hf-key-eye-toggle"
                 >
-                  {showHfKey ? <EyeOff size={14} /> : <Eye size={14} />}
+                  {showHfKey ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
             </div>
@@ -565,7 +500,7 @@ export default function SettingsView({
 
         {/* 3. Export Parameters */}
         <div
-          className="bg-[#121212] border border-zinc-900 rounded-2xl p-5 space-y-4 md:col-span-2"
+          className={`${theme === 'light' ? 'bg-white border-zinc-200 text-zinc-900 shadow-[0_4px_20px_rgba(0,0,0,0.03)]' : 'bg-[#121212] border border-zinc-900/60 text-white'} border rounded-2xl p-6.5 space-y-4 md:col-span-2`}
           id="section-export-params"
         >
           <div className="flex items-center gap-2 border-b border-zinc-900 pb-3">
@@ -577,8 +512,8 @@ export default function SettingsView({
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {/* Encoding file format select */}
-            <div className="space-y-1.5 bg-zinc-950 p-3 rounded-xl border border-zinc-900">
-              <label className="text-[9px] font-mono uppercase tracking-wider text-zinc-500">
+            <div className={`space-y-1.5 p-3 rounded-xl border ${theme === 'light' ? 'bg-zinc-50 border-zinc-200 text-zinc-900' : 'bg-zinc-950 border-zinc-900 text-white'}`}>
+              <label className={`text-[9px] font-mono uppercase tracking-wider ${theme === 'light' ? 'text-zinc-400' : 'text-zinc-500'}`}>
                 Codificación de Video
               </label>
               <div className="space-y-1 mt-1">
@@ -592,10 +527,12 @@ export default function SettingsView({
                     onClick={() =>
                       setExports((prev) => ({ ...prev, encoding: enc.id }))
                     }
-                    className={`w-full text-left p-2 rounded text-[10px] font-medium transition-colors ${
+                    className={`w-full text-left p-2 rounded text-[10px] font-bold transition-all cursor-pointer ${
                       exports.encoding === enc.id
                         ? "bg-[#9B51E0]/15 text-white border border-[#9B51E0]/30"
-                        : "text-zinc-500 hover:text-zinc-300"
+                        : theme === 'light'
+                          ? "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100"
+                          : "text-zinc-500 hover:text-zinc-300"
                     }`}
                     id={`encoding-sel-${enc.id}`}
                   >
@@ -606,12 +543,12 @@ export default function SettingsView({
             </div>
 
             {/* Safe Area grid guidelines watermark toggle */}
-            <div className="space-y-1.5 bg-zinc-950 p-3 rounded-xl border border-zinc-900 flex flex-col justify-between">
+            <div className={`space-y-1.5 p-3 rounded-xl border flex flex-col justify-between ${theme === 'light' ? 'bg-zinc-50 border-zinc-200 text-zinc-900' : 'bg-zinc-950 border-zinc-900 text-white'}`}>
               <div>
-                <label className="text-[9px] font-mono uppercase tracking-wider text-zinc-500">
+                <label className={`text-[9px] font-mono uppercase tracking-wider ${theme === 'light' ? 'text-zinc-400' : 'text-zinc-500'}`}>
                   Márgenes de Seguridad en Línea de Tiempo
                 </label>
-                <p className="text-[10px] text-zinc-400 mt-1 leading-normal">
+                <p className={`text-[10px] ${theme === 'light' ? 'text-zinc-500' : 'text-zinc-405'} mt-1 leading-normal`}>
                   Superponer márgenes de seguridad de Instagram/TikTok en los
                   renderizados del lienzo.
                 </p>
@@ -627,7 +564,9 @@ export default function SettingsView({
                 className={`w-full text-center py-2.5 rounded text-xs font-semibold border transition-all cursor-pointer ${
                   exports.watermark
                     ? "bg-[#00D2FF]/20 text-white border-[#00D2FF]/50"
-                    : "bg-zinc-900/40 text-zinc-500 border-zinc-900"
+                    : theme === 'light'
+                      ? "bg-zinc-200/50 text-zinc-450 border-zinc-300/40 hover:bg-zinc-200"
+                      : "bg-zinc-900/40 text-zinc-500 border-zinc-900"
                 }`}
                 id="watermark-safeguard-toggle"
               >
@@ -636,12 +575,12 @@ export default function SettingsView({
             </div>
 
             {/* AI Compression */}
-            <div className="space-y-1.5 bg-zinc-950 p-3 rounded-xl border border-zinc-900 flex flex-col justify-between">
+            <div className={`space-y-1.5 p-3 rounded-xl border flex flex-col justify-between ${theme === 'light' ? 'bg-zinc-50 border-zinc-200 text-zinc-900' : 'bg-zinc-950 border-zinc-900 text-white'}`}>
               <div>
-                <label className="text-[9px] font-mono uppercase tracking-wider text-zinc-500">
+                <label className={`text-[9px] font-mono uppercase tracking-wider ${theme === 'light' ? 'text-zinc-400' : 'text-zinc-500'}`}>
                   Ingesta de Metadatos
                 </label>
-                <p className="text-[10px] text-zinc-400 mt-1 leading-normal">
+                <p className={`text-[10px] ${theme === 'light' ? 'text-zinc-500' : 'text-zinc-405'} mt-1 leading-normal`}>
                   Incrustar prompts activos y pesos de semilla directamente en
                   cabeceras de ProRes.
                 </p>
@@ -654,7 +593,9 @@ export default function SettingsView({
                 className={`w-full text-center py-2.5 rounded text-xs font-semibold border transition-all cursor-pointer ${
                   exports.compress
                     ? "bg-[#00D2FF]/15 text-white border-[#00D2FF]/30"
-                    : "bg-zinc-900/40 text-zinc-500 border-zinc-900"
+                    : theme === 'light'
+                      ? "bg-zinc-200/50 text-zinc-450 border-zinc-300/40 hover:bg-zinc-200"
+                      : "bg-zinc-900/40 text-zinc-500 border-zinc-900"
                 }`}
                 id="compress-metadata-toggle"
               >
@@ -666,15 +607,168 @@ export default function SettingsView({
       </div>
 
       {/* Security note */}
-      <div className="bg-[#121212] border border-zinc-900 p-4 rounded-xl flex items-center gap-3">
+      <div className={`border p-4 rounded-xl flex items-center gap-3 ${theme === 'light' ? 'bg-emerald-50/50 border-emerald-200/60 text-emerald-950' : 'bg-[#121212] border-zinc-900 text-white'}`}>
         <ShieldCheck size={18} className="text-emerald-400" />
-        <span className="text-[11px] text-zinc-400 leading-normal">
+        <span className={`text-[11px] ${theme === 'light' ? 'text-emerald-800' : 'text-zinc-400'} leading-normal`}>
           Protocolo de Seguridad Activado: VYBE Creative Studio ejecuta flujos
           autenticados de OAuth de forma segura. Se omiten las conexiones
           directas con bases de datos para mantener el aislamiento absoluto de
           los nodos en modo de simulación local.
         </span>
       </div>
+
+      {/* Social Connection Modal */}
+      <AnimatePresence>
+        {activeSocialModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+            id="social-connection-modal"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className={`w-full max-w-md border rounded-3xl p-6.5 space-y-6 shadow-2xl relative ${
+                theme === 'light'
+                  ? 'bg-white/95 border-zinc-200 text-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.1)]'
+                  : 'bg-[#121212] border-zinc-900 text-white shadow-[0_20px_50px_rgba(0,0,0,0.7)]'
+              }`}
+            >
+              {/* Circular Icon and Header */}
+              <div className="flex flex-col items-center text-center space-y-3">
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-tr from-[#00D2FF] to-[#9B51E0] text-white shadow-lg relative z-10">
+                    {activeSocialModal === "instagram" && <Instagram size={28} />}
+                    {activeSocialModal === "tiktok" && <Tv size={28} />}
+                    {activeSocialModal === "youtube" && <Youtube size={28} />}
+                  </div>
+                  <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-[#00D2FF] to-[#9B51E0] opacity-25 blur-sm z-0 animate-pulse" />
+                </div>
+                <div>
+                  <h3 className={`text-lg sm:text-[19px] font-black ${theme === 'light' ? 'text-zinc-950' : 'text-white'} tracking-tight`}>
+                    Vincular {activeSocialModal === "instagram" ? "Instagram" : activeSocialModal === "tiktok" ? "TikTok" : "YouTube Shorts"}
+                  </h3>
+                  <p className={`text-xs ${theme === 'light' ? 'text-zinc-400' : 'text-zinc-500'} mt-1`}>
+                    VYBE orquestará la publicación automática de tus reels de forma segura.
+                  </p>
+                </div>
+              </div>
+
+              {/* Options Body */}
+              <div className="space-y-3">
+                {/* Option 1: Use Last Connected Account */}
+                <div
+                  onClick={() => setSocialModalOption("last")}
+                  className={`border rounded-2xl p-4.5 cursor-pointer transition-all duration-300 flex items-center justify-between ${
+                    socialModalOption === "last"
+                      ? theme === 'light'
+                        ? 'bg-zinc-50 border-zinc-300 shadow-sm'
+                        : 'bg-zinc-900/60 border-zinc-800 shadow-md'
+                      : theme === 'light'
+                        ? 'bg-transparent border-zinc-150 hover:bg-zinc-50/50'
+                        : 'bg-transparent border-zinc-900/60 hover:bg-zinc-900/20'
+                  }`}
+                >
+                  <div className="flex items-center gap-3.5">
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                      socialModalOption === "last" ? 'bg-gradient-to-tr from-[#00D2FF] to-[#9B51E0] text-white' : theme === 'light' ? 'bg-zinc-100 text-zinc-400' : 'bg-zinc-900 text-zinc-650'
+                    }`}>
+                      <CheckCircle2 size={15} />
+                    </div>
+                    <div>
+                      <span className={`text-[13px] sm:text-[13.5px] font-bold block ${theme === 'light' ? 'text-zinc-800' : 'text-white'}`}>
+                        Usar última cuenta
+                      </span>
+                      <span className={`text-[12px] font-mono ${theme === 'light' ? 'text-[#9B51E0] font-black' : 'text-[#00D2FF] font-bold'} block mt-0.5`}>
+                        {lastHandles[activeSocialModal] || "@adrian.vybe"}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Option 2: Link Different Account */}
+                <div
+                  onClick={() => setSocialModalOption("new")}
+                  className={`border rounded-2xl p-4.5 cursor-pointer transition-all duration-300 space-y-3.5 ${
+                    socialModalOption === "new"
+                      ? theme === 'light'
+                        ? 'bg-zinc-50 border-zinc-300 shadow-sm'
+                        : 'bg-zinc-900/60 border-zinc-800 shadow-md'
+                      : theme === 'light'
+                        ? 'bg-transparent border-zinc-150 hover:bg-zinc-50/50'
+                        : 'bg-transparent border-zinc-900/60 hover:bg-zinc-900/20'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3.5">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                        socialModalOption === "new" ? 'bg-gradient-to-tr from-[#00D2FF] to-[#9B51E0] text-white' : theme === 'light' ? 'bg-zinc-100 text-zinc-400' : 'bg-zinc-900 text-zinc-650'
+                      }`}>
+                        <Sliders size={14} />
+                      </div>
+                      <div>
+                        <span className={`text-[13px] sm:text-[13.5px] font-bold block ${theme === 'light' ? 'text-zinc-800' : 'text-white'}`}>
+                          Vincular otra cuenta
+                        </span>
+                        <span className={`text-[11.5px] ${theme === 'light' ? 'text-zinc-400' : 'text-zinc-500'} block mt-0.5`}>
+                          Registra un usuario nuevo en esta sesión.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {socialModalOption === "new" && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="relative flex items-center mt-2"
+                    >
+                      <span className={`absolute left-4 font-bold font-mono text-[13.5px] ${theme === 'light' ? 'text-[#9B51E0]' : 'text-[#00D2FF]'}`}>@</span>
+                      <input
+                        type="text"
+                        placeholder="nombre_usuario"
+                        value={newHandleInput}
+                        onChange={(e) => setNewHandleInput(e.target.value)}
+                        className={`w-full text-xs font-bold ${
+                          theme === 'light' ? 'text-zinc-900 bg-white border-zinc-200 focus:border-zinc-300' : 'text-zinc-300 bg-zinc-950 border-zinc-800 focus:border-zinc-700'
+                        } border rounded-xl py-2.5 pl-8 pr-4 transition-all duration-300 focus:outline-none`}
+                        id="new-handle-input"
+                      />
+                    </motion.div>
+                  )}
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex items-center gap-3 pt-2">
+                <button
+                  type="button"
+                  onClick={() => setActiveSocialModal(null)}
+                  className={`flex-1 py-3 text-xs font-bold rounded-xl transition-all cursor-pointer border text-center ${
+                    theme === 'light'
+                      ? 'bg-zinc-100 border-zinc-200 text-zinc-600 hover:bg-zinc-200'
+                      : 'bg-zinc-900 border-zinc-800 text-zinc-400 hover:bg-zinc-800 hover:text-white'
+                  }`}
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="button"
+                  onClick={handleSaveSocialConnection}
+                  className="flex-1 py-3 text-xs font-bold rounded-xl text-white bg-gradient-to-r from-[#00D2FF] to-[#9B51E0] hover:shadow-[0_4px_15px_rgba(0,210,255,0.2)] hover:opacity-95 transition-all cursor-pointer text-center animate-duration-150"
+                >
+                  Confirmar Conexión
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

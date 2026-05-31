@@ -17,6 +17,8 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Asset, Project, ActiveSection } from "../types";
+
+type ExportTarget = Project | Asset;
 import { AnimatePresence, motion } from "motion/react";
 import { useFeedback } from "../hooks/useFeedBack";
 import Toast from "../components/ui/Toast";
@@ -26,9 +28,10 @@ interface AssetsViewProps {
   assets: Asset[];
   onToggleFavorite: (id: string) => void;
   onDeleteAsset: (id: string) => void;
-  onOpenExportModal: (project: Project) => void;
+  onOpenExportModal: (target: ExportTarget) => void;
   onNavigate: (section: ActiveSection) => void;
   onAddAsset: (asset: Asset) => void;
+  theme?: string;
 }
 
 type TabType = "image" | "video" | "audio" | "template" | "export";
@@ -40,6 +43,7 @@ export default function AssetsView({
   onOpenExportModal,
   onNavigate,
   onAddAsset,
+  theme = 'dark',
 }: AssetsViewProps) {
   const [activeTab, setActiveTab] = useState<TabType>("image");
   const [searchTerm, setSearchTerm] = useState("");
@@ -158,7 +162,7 @@ export default function AssetsView({
       />
 
       {/* Header bar: Tab and Search */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-[#121212] border border-zinc-900 rounded-2xl p-4">
+      <div className={`flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border rounded-2xl p-4 ${theme === 'light' ? 'bg-[#EAEAEF] border-[#CECED8]' : 'bg-[#121212] border-zinc-900'}`}>
         {/* Five Interactive Tabs */}
         <div className="flex flex-wrap gap-1.5" id="asset-tabs-row">
           {[
@@ -177,7 +181,9 @@ export default function AssetsView({
                 className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold cursor-pointer transition-all duration-300 ${
                   activeTab === tab.id
                     ? "bg-gradient-to-r from-[#00D2FF] to-[#9B51E0] text-white shadow-lg shadow-[#00D2FF]/5"
-                    : "bg-zinc-950 border border-zinc-900/60 text-zinc-400 hover:text-white hover:border-zinc-800"
+                    : theme === 'light'
+                      ? "bg-[#DCDCE4] border border-[#C8C8D0] text-zinc-600 hover:text-zinc-900 hover:border-[#AEAEBB]"
+                      : "bg-zinc-950 border border-zinc-900/60 text-zinc-400 hover:text-white hover:border-zinc-800"
                 }`}
                 id={`asset-tab-${tab.id}`}
               >
@@ -200,7 +206,7 @@ export default function AssetsView({
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Buscar recursos..."
-              className="w-full text-xs text-zinc-200 placeholder-zinc-500 bg-zinc-950 border border-zinc-900 rounded-xl py-2.5 pl-10 pr-4 focus:outline-none focus:border-zinc-800 focus:ring-1 focus:ring-[#00D2FF]/10"
+              className={`w-full text-xs placeholder-zinc-500 rounded-xl py-2.5 pl-10 pr-4 focus:outline-none focus:ring-1 focus:ring-[#00D2FF]/20 border ${theme === 'light' ? 'text-zinc-800 bg-[#DCDCE4] border-[#C8C8D0] focus:border-[#AEAEBB]' : 'text-zinc-200 bg-zinc-950 border-zinc-900 focus:border-zinc-800'}`}
               id="asset-search"
             />
           </div>
@@ -208,7 +214,7 @@ export default function AssetsView({
           <button
             onClick={handleUploadClick}
             type="button"
-            className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold bg-zinc-900 hover:bg-zinc-850 border border-zinc-800 transition-colors cursor-pointer select-none"
+            className={`inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold border transition-colors cursor-pointer select-none ${theme === 'light' ? 'bg-[#DCDCE4] hover:bg-[#D4D4DC] border-[#C8C8D0] text-zinc-700' : 'bg-zinc-900 hover:bg-zinc-800 border-zinc-800 text-zinc-300'}`}
             id="assets-upload-trigger"
           >
             <Upload size={13} className="text-[#00D2FF]" />
@@ -235,9 +241,9 @@ export default function AssetsView({
 
       {/* Asset elements grid */}
       {filteredAssets.length === 0 ? (
-        <div className="flex flex-col items-center justify-center text-center py-20 bg-[#121212]/30 border border-zinc-900/60 rounded-2xl">
+        <div className={`flex flex-col items-center justify-center text-center py-20 border rounded-2xl ${theme === 'light' ? 'bg-[#E2E2EA] border-[#CECED8]' : 'bg-[#121212]/30 border-zinc-900/60'}`}>
           <FolderLock size={36} className="text-zinc-600 mb-2.5" />
-          <h3 className="text-xs font-semibold text-zinc-200 uppercase tracking-wider">
+          <h3 className={`text-xs font-semibold uppercase tracking-wider ${theme === 'light' ? 'text-zinc-600' : 'text-zinc-200'}`}>
             Categoría de{" "}
             {activeTab === "image"
               ? "Imágenes"
@@ -271,13 +277,14 @@ export default function AssetsView({
               onDelete={onDeleteAsset}
               onDownload={simulateDownload}
               showFeedback={triggerFeedback}
+              theme={theme}
             />
           ))}
         </div>
       )}
 
       {/* Guide notice footer panel */}
-      <div className="bg-zinc-900/25 border border-zinc-900 p-4.5 rounded-xl flex items-start gap-3">
+      <div className={`border rounded-xl flex items-start gap-3 p-4 ${theme === 'light' ? 'bg-[#E2E2EA] border-[#CECED8]' : 'bg-zinc-900/25 border-zinc-900'}`}>
         <Sparkles size={15} className="text-[#00D2FF] mt-0.5 animate-pulse" />
         <div>
           <h4 className="text-xs font-semibold text-zinc-200 uppercase tracking-widest text-[10px]">
@@ -304,14 +311,14 @@ export default function AssetsView({
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-zinc-950 border border-zinc-900 rounded-2xl w-full max-w-2xl overflow-hidden relative"
+              className={`border rounded-2xl w-full max-w-2xl overflow-hidden relative ${theme === 'light' ? 'bg-[#EAEAEF] border-[#CECED8]' : 'bg-zinc-950 border-zinc-900'}`}
               onClick={(e) => e.stopPropagation()}
               id="asset-preview-modal-dialog"
             >
               {/* Header */}
-              <div className="flex justify-between items-center p-4 border-b border-zinc-900">
+              <div className={`flex justify-between items-center p-4 border-b ${theme === 'light' ? 'border-[#CECED8]' : 'border-zinc-900'}`}>
                 <div className="flex items-center gap-2">
-                  <div className="p-1 px-2 rounded bg-zinc-900 text-[10px] font-mono text-[#00D2FF] uppercase border border-zinc-800">
+                  <div className={`p-1 px-2 rounded text-[10px] font-mono text-[#00D2FF] uppercase border ${theme === 'light' ? 'bg-[#DCDCE4] border-[#C8C8D0]' : 'bg-zinc-900 border-zinc-800'}`}>
                     {selectedPreviewAsset.type === "image"
                       ? "Imagen"
                       : selectedPreviewAsset.type === "video"
@@ -322,7 +329,7 @@ export default function AssetsView({
                             ? "Plantilla"
                             : "Exportación"}
                   </div>
-                  <h3 className="text-sm font-semibold text-white truncate max-w-[280px]">
+                  <h3 className={`text-sm font-semibold truncate max-w-[280px] ${theme === 'light' ? 'text-zinc-800' : 'text-white'}`}>
                     {selectedPreviewAsset.title}
                   </h3>
                 </div>
@@ -335,7 +342,7 @@ export default function AssetsView({
               </div>
 
               {/* Preview Body */}
-              <div className="p-6 flex items-center justify-center bg-zinc-950/40 relative aspect-video">
+              <div className={`p-6 flex items-center justify-center relative aspect-video ${theme === 'light' ? 'bg-[#E2E2EA]' : 'bg-zinc-950/40'}`}>
                 {selectedPreviewAsset.type === "audio" ? (
                   <div className="flex flex-col items-center gap-3">
                     <Music size={64} className="text-[#9B51E0] animate-pulse" />
@@ -348,18 +355,25 @@ export default function AssetsView({
                       className="w-80 mt-2 filter invert opacity-90"
                     />
                   </div>
+                ) : selectedPreviewAsset.type === 'video' ? (
+                  <video
+                    src={selectedPreviewAsset.url}
+                    controls
+                    autoPlay
+                    className="max-h-[380px] w-full object-contain rounded-lg shadow-2xl"
+                  />
                 ) : (
                   <img
                     src={selectedPreviewAsset.url}
                     alt={selectedPreviewAsset.title}
-                    className="max-h-[380px] w-full object-contain rounded-lg border border-zinc-955/60 shadow-2xl"
+                    className="max-h-[380px] w-full object-contain rounded-lg shadow-2xl"
                     referrerPolicy="no-referrer"
                   />
                 )}
               </div>
 
               {/* Footer Actions */}
-              <div className="flex justify-between items-center p-4 border-t border-zinc-900 bg-zinc-900/10">
+              <div className={`flex justify-between items-center p-4 border-t ${theme === 'light' ? 'border-[#CECED8] bg-[#E2E2EA]' : 'border-zinc-900 bg-zinc-900/10'}`}>
                 <span className="text-xs font-mono text-zinc-500">
                   Tamaño: {selectedPreviewAsset.size}
                 </span>

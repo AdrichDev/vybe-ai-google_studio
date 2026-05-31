@@ -13,6 +13,7 @@ export interface Project {
   image: string;
   status: 'Ready' | 'Processing' | 'Approved';
   prompt?: string;
+  ratio?: string;
 }
 
 export interface Asset {

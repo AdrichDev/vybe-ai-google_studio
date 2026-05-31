@@ -65,21 +65,58 @@ export default function ExportModal({
     );
   };
 
-  const handleDownload = (format: string) => {
+  const triggerDownload = (blob: Blob, filename: string) => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  const handleDownload = async (format: string) => {
+    if (!imageUrl) return;
     setDownloadingFormat(format);
-    setTimeout(() => {
+
+    const safeName = assetTitle
+      .toLowerCase()
+      .replace(/\s+/g, "_")
+      .replace(/[^a-z0-9_]/g, "")
+      .slice(0, 60) || "vybe_export";
+
+    try {
+      if (format === "raw") {
+        const res = await fetch(imageUrl);
+        const blob = await res.blob();
+        const ext = blob.type.includes("png") ? "png" : "jpg";
+        triggerDownload(blob, `${safeName}.${ext}`);
+
+      } else if (format === "optimized") {
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        await new Promise<void>((resolve, reject) => {
+          img.onload = () => resolve();
+          img.onerror = () => reject(new Error("No se pudo cargar la imagen para comprimir."));
+          img.src = imageUrl;
+        });
+        const canvas = document.createElement("canvas");
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        const ctx = canvas.getContext("2d")!;
+        ctx.drawImage(img, 0, 0);
+        canvas.toBlob(
+          (blob) => { if (blob) triggerDownload(blob, `${safeName}_optimizado.jpg`); },
+          "image/jpeg",
+          0.85,
+        );
+      }
+    } catch (err) {
+      console.error("Error al descargar:", err);
+    } finally {
       setDownloadingFormat(null);
-      // Trigger user native download notification simulation
-      const element = document.createElement("a");
-      element.setAttribute("href", imageUrl);
-      element.setAttribute(
-        "download",
-        `${assetTitle.toLowerCase().replace(/\s+/g, "_")}_${format}.jpg`,
-      );
-      element.style.display = "none";
-      document.body.appendChild(element);
-      // Simply trigger alert visually in modal state or state check
-    }, 1500);
+    }
   };
 
   const handlePublish = (e: React.FormEvent) => {
@@ -199,7 +236,7 @@ export default function ExportModal({
                       Descargar Original
                     </div>
                     <div className="text-[10px] text-zinc-500 font-mono">
-                      Máster sin comprimir • ~124.5 MB
+                      PNG/JPG sin comprimir
                     </div>
                   </div>
                 </div>
@@ -230,7 +267,7 @@ export default function ExportModal({
                       Descargar Comprimido
                     </div>
                     <div className="text-[10px] text-zinc-500 font-mono">
-                      H.264 Fast Start • Listo para Web • ~8.2 MB
+                      JPEG 85% · Optimizado para web
                     </div>
                   </div>
                 </div>
