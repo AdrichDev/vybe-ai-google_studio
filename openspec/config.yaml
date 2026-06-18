@@ -1,0 +1,49 @@
+schema: spec-driven
+
+context: |
+  Project: vybe-ai-google_studio
+  Architecture: monorepo — vybe-ai-web (Vite + React 19 + TS) / vybe-ai-back (Node ESM + Express 4)
+  AI providers: @google/genai (Gemini), @huggingface/inference
+  State: TanStack Query v5, React 19
+  Style: Tailwind CSS v4
+  Testing: NO test runner installed — test standardization pending (Vitest for web, node:test for backend)
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - State which package(s) are affected (web / back / root)
+  specs:
+    - Use Given/When/Then (Gherkin) for acceptance scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Include sequence diagrams for complex flows
+    - Document architecture decisions with rationale
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+    - HARD RULE — a task is NEVER marked [x] without real test/build output evidence
+  apply:
+    - Follow existing code patterns
+    tdd: false
+    # strict_tdd is false: no test runner installed yet
+    # Standardized test stack (DO NOT install here — record only):
+    #   web: Vitest
+    #   back: node:test
+    #   DO NOT install Cucumber
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: "npm run build"
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas
+
+testing:
+  strict_tdd: false
+  reason: "No test runner detected in vybe-ai-web or vybe-ai-back"
+  standardized_stack:
+    web: "Vitest (not yet installed)"
+    back: "node:test built-in (not yet configured)"
+    e2e: "none"
+    cucumber: "DO NOT install"
+  acceptance_format: "Gherkin (Given/When/Then)"

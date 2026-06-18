@@ -1,0 +1,4632 @@
+{
+  "nodes": [
+    {
+      "id": ".claude.helpers.github_safe",
+      "label": "github-safe.js",
+      "type": "module",
+      "description": "TypeScript module github-safe.js",
+      "source_file": ".claude\\helpers\\github-safe.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.github_safe.import_child_process",
+      "label": "child_process",
+      "type": "import",
+      "description": "",
+      "source_file": ".claude\\helpers\\github-safe.js",
+      "source_location": "L22",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.github_safe.import_fs",
+      "label": "fs",
+      "type": "import",
+      "description": "",
+      "source_file": ".claude\\helpers\\github-safe.js",
+      "source_location": "L23",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.github_safe.import_os",
+      "label": "os",
+      "type": "import",
+      "description": "",
+      "source_file": ".claude\\helpers\\github-safe.js",
+      "source_location": "L24",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.github_safe.import_path",
+      "label": "path",
+      "type": "import",
+      "description": "",
+      "source_file": ".claude\\helpers\\github-safe.js",
+      "source_location": "L25",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.github_safe.import_crypto",
+      "label": "crypto",
+      "type": "import",
+      "description": "",
+      "source_file": ".claude\\helpers\\github-safe.js",
+      "source_location": "L26",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.memory",
+      "label": "memory.js",
+      "type": "module",
+      "description": "TypeScript module memory.js",
+      "source_file": ".claude\\helpers\\memory.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.memory.loadMemory",
+      "label": "loadMemory",
+      "type": "function",
+      "description": "",
+      "source_file": ".claude\\helpers\\memory.js",
+      "source_location": "L13",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.memory.saveMemory",
+      "label": "saveMemory",
+      "type": "function",
+      "description": "",
+      "source_file": ".claude\\helpers\\memory.js",
+      "source_location": "L24",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.router",
+      "label": "router.js",
+      "type": "module",
+      "description": "TypeScript module router.js",
+      "source_file": ".claude\\helpers\\router.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.router.routeTask",
+      "label": "routeTask",
+      "type": "function",
+      "description": "",
+      "source_file": ".claude\\helpers\\router.js",
+      "source_location": "L32",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.session",
+      "label": "session.js",
+      "type": "module",
+      "description": "TypeScript module session.js",
+      "source_file": ".claude\\helpers\\session.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.statusline",
+      "label": "statusline.js",
+      "type": "module",
+      "description": "TypeScript module statusline.js",
+      "source_file": ".claude\\helpers\\statusline.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.statusline.resolveBannerVersion",
+      "label": "resolveBannerVersion",
+      "type": "function",
+      "description": "",
+      "source_file": ".claude\\helpers\\statusline.js",
+      "source_location": "L19",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.statusline.getUserInfo",
+      "label": "getUserInfo",
+      "type": "function",
+      "description": "",
+      "source_file": ".claude\\helpers\\statusline.js",
+      "source_location": "L78",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.statusline.getLearningStats",
+      "label": "getLearningStats",
+      "type": "function",
+      "description": "",
+      "source_file": ".claude\\helpers\\statusline.js",
+      "source_location": "L99",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.statusline.getV3Progress",
+      "label": "getV3Progress",
+      "type": "function",
+      "description": "",
+      "source_file": ".claude\\helpers\\statusline.js",
+      "source_location": "L143",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.statusline.getSecurityStatus",
+      "label": "getSecurityStatus",
+      "type": "function",
+      "description": "",
+      "source_file": ".claude\\helpers\\statusline.js",
+      "source_location": "L169",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.statusline.getSwarmStatus",
+      "label": "getSwarmStatus",
+      "type": "function",
+      "description": "",
+      "source_file": ".claude\\helpers\\statusline.js",
+      "source_location": "L206",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.statusline.getSystemMetrics",
+      "label": "getSystemMetrics",
+      "type": "function",
+      "description": "",
+      "source_file": ".claude\\helpers\\statusline.js",
+      "source_location": "L226",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.statusline.progressBar",
+      "label": "progressBar",
+      "type": "function",
+      "description": "",
+      "source_file": ".claude\\helpers\\statusline.js",
+      "source_location": "L264",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.statusline.generateStatusline",
+      "label": "generateStatusline",
+      "type": "function",
+      "description": "",
+      "source_file": ".claude\\helpers\\statusline.js",
+      "source_location": "L272",
+      "file_type": "code"
+    },
+    {
+      "id": ".claude.helpers.statusline.generateJSON",
+      "label": "generateJSON",
+      "type": "function",
+      "description": "",
+      "source_file": ".claude\\helpers\\statusline.js",
+      "source_location": "L329",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.server",
+      "label": "server.js",
+      "type": "module",
+      "description": "TypeScript module server.js",
+      "source_file": "vybe-ai-back\\server.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.server.import_server_js",
+      "label": "./src/server.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\server.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.app",
+      "label": "app.js",
+      "type": "module",
+      "description": "TypeScript module app.js",
+      "source_file": "vybe-ai-back\\src\\app.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.app.import_express",
+      "label": "express",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\app.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.app.import_cors",
+      "label": "cors",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\app.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.app.import_image_routes_js",
+      "label": "./routes/image.routes.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\app.js",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.app.import_error_handler_js",
+      "label": "./middlewares/error-handler.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\app.js",
+      "source_location": "L4",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.app.createApp",
+      "label": "createApp",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\app.js",
+      "source_location": "L6",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.config.env",
+      "label": "env.js",
+      "type": "module",
+      "description": "TypeScript module env.js",
+      "source_file": "vybe-ai-back\\src\\config\\env.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.config.env.import_dns",
+      "label": "dns",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\config\\env.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.config.env.import_dotenv",
+      "label": "dotenv",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\config\\env.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.config.http",
+      "label": "http.js",
+      "type": "module",
+      "description": "TypeScript module http.js",
+      "source_file": "vybe-ai-back\\src\\config\\http.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.image.controller",
+      "label": "image.controller.js",
+      "type": "module",
+      "description": "TypeScript module image.controller.js",
+      "source_file": "vybe-ai-back\\src\\controllers\\image.controller.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.image.controller.import_generate_image_dto_js",
+      "label": "../dto/generate-image.dto.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\image.controller.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.image.controller.import_image_generation_service_js",
+      "label": "../services/image-generation.service.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\image.controller.js",
+      "source_location": "L7",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.image.controller.generateGoogleImageController",
+      "label": "generateGoogleImageController",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\image.controller.js",
+      "source_location": "L14",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.image.controller.generateOpenAiImageController",
+      "label": "generateOpenAiImageController",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\image.controller.js",
+      "source_location": "L24",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.image.controller.editOpenAiImageController",
+      "label": "editOpenAiImageController",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\image.controller.js",
+      "source_location": "L34",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.image.controller.generateHuggingFaceImageController",
+      "label": "generateHuggingFaceImageController",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\image.controller.js",
+      "source_location": "L44",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.prompt.controller",
+      "label": "prompt.controller.js",
+      "type": "module",
+      "description": "TypeScript module prompt.controller.js",
+      "source_file": "vybe-ai-back\\src\\controllers\\prompt.controller.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.prompt.controller.import_generate_test_prompt_dto_js",
+      "label": "../dto/generate-test-prompt.dto.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\prompt.controller.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.prompt.controller.import_prompt_generation_service_js",
+      "label": "../services/prompt-generation.service.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\prompt.controller.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.prompt.controller.generateTestPromptController",
+      "label": "generateTestPromptController",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\prompt.controller.js",
+      "source_location": "L4",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.video.controller",
+      "label": "video.controller.js",
+      "type": "module",
+      "description": "TypeScript module video.controller.js",
+      "source_file": "vybe-ai-back\\src\\controllers\\video.controller.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.video.controller.import_generate_video_dto_js",
+      "label": "../dto/generate-video.dto.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\video.controller.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.video.controller.import_video_generation_service_js",
+      "label": "../services/video-generation.service.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\video.controller.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.video.controller.import_provider_error_js",
+      "label": "../errors/provider-error.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\video.controller.js",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.video.controller.import_app_error_js",
+      "label": "../errors/app-error.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\video.controller.js",
+      "source_location": "L4",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.video.controller.generateGoogleVideoController",
+      "label": "generateGoogleVideoController",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\video.controller.js",
+      "source_location": "L6",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.video.controller.pollGoogleVideoController",
+      "label": "pollGoogleVideoController",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\video.controller.js",
+      "source_location": "L16",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.controllers.video.controller.generateOpenAiVideoController",
+      "label": "generateOpenAiVideoController",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\controllers\\video.controller.js",
+      "source_location": "L26",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_image.dto",
+      "label": "generate-image.dto.js",
+      "type": "module",
+      "description": "TypeScript module generate-image.dto.js",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-image.dto.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_image.dto.import_http_js",
+      "label": "../config/http.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-image.dto.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_image.dto.import_app_error_js",
+      "label": "../errors/app-error.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-image.dto.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_image.dto.import_env_js",
+      "label": "../config/env.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-image.dto.js",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_image.dto.requirePrompt",
+      "label": "requirePrompt",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-image.dto.js",
+      "source_location": "L5",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_image.dto.resolveOpenAiSize",
+      "label": "resolveOpenAiSize",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-image.dto.js",
+      "source_location": "L12",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_image.dto.resolveGoogleRequest",
+      "label": "resolveGoogleRequest",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-image.dto.js",
+      "source_location": "L24",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_image.dto.resolveOpenAiRequest",
+      "label": "resolveOpenAiRequest",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-image.dto.js",
+      "source_location": "L46",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_image.dto.resolveOpenAiEditRequest",
+      "label": "resolveOpenAiEditRequest",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-image.dto.js",
+      "source_location": "L71",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_image.dto.resolveHuggingFaceRequest",
+      "label": "resolveHuggingFaceRequest",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-image.dto.js",
+      "source_location": "L97",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_test_prompt.dto",
+      "label": "generate-test-prompt.dto.js",
+      "type": "module",
+      "description": "TypeScript module generate-test-prompt.dto.js",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-test-prompt.dto.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_test_prompt.dto.import_app_error_js",
+      "label": "../errors/app-error.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-test-prompt.dto.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_test_prompt.dto.import_http_js",
+      "label": "../config/http.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-test-prompt.dto.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_test_prompt.dto.import_env_js",
+      "label": "../config/env.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-test-prompt.dto.js",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_test_prompt.dto.resolveTestPromptRequest",
+      "label": "resolveTestPromptRequest",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-test-prompt.dto.js",
+      "source_location": "L5",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_video.dto",
+      "label": "generate-video.dto.js",
+      "type": "module",
+      "description": "TypeScript module generate-video.dto.js",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-video.dto.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_video.dto.import_app_error_js",
+      "label": "../errors/app-error.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-video.dto.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_video.dto.import_http_js",
+      "label": "../config/http.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-video.dto.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_video.dto.import_env_js",
+      "label": "../config/env.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-video.dto.js",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_video.dto.resolveGoogleVideoRequest",
+      "label": "resolveGoogleVideoRequest",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-video.dto.js",
+      "source_location": "L7",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_video.dto.resolveVeoPollRequest",
+      "label": "resolveVeoPollRequest",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-video.dto.js",
+      "source_location": "L31",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_video.dto.resolveSize",
+      "label": "resolveSize",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-video.dto.js",
+      "source_location": "L72",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_video.dto.resolveSeconds",
+      "label": "resolveSeconds",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-video.dto.js",
+      "source_location": "L80",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.dto.generate_video.dto.resolveVideoRequest",
+      "label": "resolveVideoRequest",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\dto\\generate-video.dto.js",
+      "source_location": "L91",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.errors.app_error",
+      "label": "app-error.js",
+      "type": "module",
+      "description": "TypeScript module app-error.js",
+      "source_file": "vybe-ai-back\\src\\errors\\app-error.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.errors.app_error.AppError",
+      "label": "AppError",
+      "type": "class",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\errors\\app-error.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.errors.app_error.AppError.constructor",
+      "label": "constructor",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\errors\\app-error.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.errors.provider_error",
+      "label": "provider-error.js",
+      "type": "module",
+      "description": "TypeScript module provider-error.js",
+      "source_file": "vybe-ai-back\\src\\errors\\provider-error.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.errors.provider_error.ProviderError",
+      "label": "ProviderError",
+      "type": "class",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\errors\\provider-error.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.errors.provider_error.ProviderError.constructor",
+      "label": "constructor",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\errors\\provider-error.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.middlewares.error_handler",
+      "label": "error-handler.js",
+      "type": "module",
+      "description": "TypeScript module error-handler.js",
+      "source_file": "vybe-ai-back\\src\\middlewares\\error-handler.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.middlewares.error_handler.import_http_js",
+      "label": "../config/http.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\middlewares\\error-handler.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.middlewares.error_handler.import_app_error_js",
+      "label": "../errors/app-error.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\middlewares\\error-handler.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.middlewares.error_handler.import_provider_error_js",
+      "label": "../errors/provider-error.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\middlewares\\error-handler.js",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.middlewares.error_handler.parseProviderError",
+      "label": "parseProviderError",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\middlewares\\error-handler.js",
+      "source_location": "L5",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.middlewares.error_handler.errorHandler",
+      "label": "errorHandler",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\middlewares\\error-handler.js",
+      "source_location": "L29",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.middlewares.upload.middleware",
+      "label": "upload.middleware.js",
+      "type": "module",
+      "description": "TypeScript module upload.middleware.js",
+      "source_file": "vybe-ai-back\\src\\middlewares\\upload.middleware.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.middlewares.upload.middleware.import_multer",
+      "label": "multer",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\middlewares\\upload.middleware.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_image.provider",
+      "label": "google-image.provider.js",
+      "type": "module",
+      "description": "TypeScript module google-image.provider.js",
+      "source_file": "vybe-ai-back\\src\\providers\\google-image.provider.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_image.provider.import_genai",
+      "label": "@google/genai",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-image.provider.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_image.provider.import_http_js",
+      "label": "../config/http.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-image.provider.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_image.provider.import_provider_error_js",
+      "label": "../errors/provider-error.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-image.provider.js",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_image.provider.createClient",
+      "label": "createClient",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-image.provider.js",
+      "source_location": "L5",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_image.provider.generateGoogleImage",
+      "label": "generateGoogleImage",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-image.provider.js",
+      "source_location": "L17",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_text.provider",
+      "label": "google-text.provider.js",
+      "type": "module",
+      "description": "TypeScript module google-text.provider.js",
+      "source_file": "vybe-ai-back\\src\\providers\\google-text.provider.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_text.provider.import_genai",
+      "label": "@google/genai",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-text.provider.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_text.provider.import_provider_error_js",
+      "label": "../errors/provider-error.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-text.provider.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_text.provider.buildUserPrompt",
+      "label": "buildUserPrompt",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-text.provider.js",
+      "source_location": "L9",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_text.provider.createClient",
+      "label": "createClient",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-text.provider.js",
+      "source_location": "L24",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_text.provider.generateTestPrompt",
+      "label": "generateTestPrompt",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-text.provider.js",
+      "source_location": "L31",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_video.provider",
+      "label": "google-video.provider.js",
+      "type": "module",
+      "description": "TypeScript module google-video.provider.js",
+      "source_file": "vybe-ai-back\\src\\providers\\google-video.provider.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_video.provider.import_genai",
+      "label": "@google/genai",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-video.provider.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_video.provider.import_provider_error_js",
+      "label": "../errors/provider-error.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-video.provider.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_video.provider.createClient",
+      "label": "createClient",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-video.provider.js",
+      "source_location": "L4",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_video.provider.startVeoVideoGeneration",
+      "label": "startVeoVideoGeneration",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-video.provider.js",
+      "source_location": "L11",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.google_video.provider.pollVeoVideoGeneration",
+      "label": "pollVeoVideoGeneration",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\google-video.provider.js",
+      "source_location": "L40",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.huggingface_image.provider",
+      "label": "huggingface-image.provider.js",
+      "type": "module",
+      "description": "TypeScript module huggingface-image.provider.js",
+      "source_file": "vybe-ai-back\\src\\providers\\huggingface-image.provider.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.huggingface_image.provider.import_inference",
+      "label": "@huggingface/inference",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\huggingface-image.provider.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.huggingface_image.provider.import_http_js",
+      "label": "../config/http.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\huggingface-image.provider.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.huggingface_image.provider.import_provider_error_js",
+      "label": "../errors/provider-error.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\huggingface-image.provider.js",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.huggingface_image.provider.creativityToGuidance",
+      "label": "creativityToGuidance",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\huggingface-image.provider.js",
+      "source_location": "L13",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.huggingface_image.provider.resolveHfModel",
+      "label": "resolveHfModel",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\huggingface-image.provider.js",
+      "source_location": "L18",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.huggingface_image.provider.generateHuggingFaceImage",
+      "label": "generateHuggingFaceImage",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\huggingface-image.provider.js",
+      "source_location": "L22",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.huggingface_image.provider.blobToResponse",
+      "label": "blobToResponse",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\huggingface-image.provider.js",
+      "source_location": "L73",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_image.provider",
+      "label": "openai-image.provider.js",
+      "type": "module",
+      "description": "TypeScript module openai-image.provider.js",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-image.provider.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_image.provider.import_http_js",
+      "label": "../config/http.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-image.provider.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_image.provider.import_provider_error_js",
+      "label": "../errors/provider-error.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-image.provider.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_image.provider.openaiJsonHeaders",
+      "label": "openaiJsonHeaders",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-image.provider.js",
+      "source_location": "L6",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_image.provider.openaiAuthHeader",
+      "label": "openaiAuthHeader",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-image.provider.js",
+      "source_location": "L13",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_image.provider.resolveQualityParam",
+      "label": "resolveQualityParam",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-image.provider.js",
+      "source_location": "L18",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_image.provider.callGenerationsEndpoint",
+      "label": "callGenerationsEndpoint",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-image.provider.js",
+      "source_location": "L31",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_image.provider.generateOpenAiImage",
+      "label": "generateOpenAiImage",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-image.provider.js",
+      "source_location": "L46",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_image.provider.editOpenAiImage",
+      "label": "editOpenAiImage",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-image.provider.js",
+      "source_location": "L81",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_image.provider.editViaVisionAndGenerate",
+      "label": "editViaVisionAndGenerate",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-image.provider.js",
+      "source_location": "L134",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_video.provider",
+      "label": "openai-video.provider.js",
+      "type": "module",
+      "description": "TypeScript module openai-video.provider.js",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-video.provider.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_video.provider.import_provider_error_js",
+      "label": "../errors/provider-error.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-video.provider.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_video.provider.openaiHeaders",
+      "label": "openaiHeaders",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-video.provider.js",
+      "source_location": "L7",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_video.provider.createVideoJob",
+      "label": "createVideoJob",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-video.provider.js",
+      "source_location": "L14",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_video.provider.pollVideoJob",
+      "label": "pollVideoJob",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-video.provider.js",
+      "source_location": "L30",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_video.provider.downloadVideoBuffer",
+      "label": "downloadVideoBuffer",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-video.provider.js",
+      "source_location": "L58",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.providers.openai_video.provider.generateSoraVideo",
+      "label": "generateSoraVideo",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\providers\\openai-video.provider.js",
+      "source_location": "L71",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.routes.image.routes",
+      "label": "image.routes.js",
+      "type": "module",
+      "description": "TypeScript module image.routes.js",
+      "source_file": "vybe-ai-back\\src\\routes\\image.routes.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.routes.image.routes.import_express",
+      "label": "express",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\routes\\image.routes.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.routes.image.routes.import_image_controller_js",
+      "label": "../controllers/image.controller.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\routes\\image.routes.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.routes.image.routes.import_prompt_controller_js",
+      "label": "../controllers/prompt.controller.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\routes\\image.routes.js",
+      "source_location": "L8",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.routes.image.routes.import_video_controller_js",
+      "label": "../controllers/video.controller.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\routes\\image.routes.js",
+      "source_location": "L9",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.routes.image.routes.import_upload_middleware_js",
+      "label": "../middlewares/upload.middleware.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\routes\\image.routes.js",
+      "source_location": "L10",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.server",
+      "label": "server.js",
+      "type": "module",
+      "description": "TypeScript module server.js",
+      "source_file": "vybe-ai-back\\src\\server.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.server.import_env_js",
+      "label": "./config/env.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\server.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.server.import_app_js",
+      "label": "./app.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\server.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.image_generation.service",
+      "label": "image-generation.service.js",
+      "type": "module",
+      "description": "TypeScript module image-generation.service.js",
+      "source_file": "vybe-ai-back\\src\\services\\image-generation.service.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.image_generation.service.import_google_image_provider_js",
+      "label": "../providers/google-image.provider.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\image-generation.service.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.image_generation.service.import_openai_image_provider_js",
+      "label": "../providers/openai-image.provider.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\image-generation.service.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.image_generation.service.import_huggingface_image_provider_js",
+      "label": "../providers/huggingface-image.provider.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\image-generation.service.js",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.image_generation.service.generateGoogleImageService",
+      "label": "generateGoogleImageService",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\image-generation.service.js",
+      "source_location": "L5",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.image_generation.service.generateOpenAiImageService",
+      "label": "generateOpenAiImageService",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\image-generation.service.js",
+      "source_location": "L9",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.image_generation.service.editOpenAiImageService",
+      "label": "editOpenAiImageService",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\image-generation.service.js",
+      "source_location": "L13",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.image_generation.service.generateHuggingFaceImageService",
+      "label": "generateHuggingFaceImageService",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\image-generation.service.js",
+      "source_location": "L17",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.prompt_generation.service",
+      "label": "prompt-generation.service.js",
+      "type": "module",
+      "description": "TypeScript module prompt-generation.service.js",
+      "source_file": "vybe-ai-back\\src\\services\\prompt-generation.service.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.prompt_generation.service.import_google_text_provider_js",
+      "label": "../providers/google-text.provider.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\prompt-generation.service.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.prompt_generation.service.generateTestPromptService",
+      "label": "generateTestPromptService",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\prompt-generation.service.js",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.video_generation.service",
+      "label": "video-generation.service.js",
+      "type": "module",
+      "description": "TypeScript module video-generation.service.js",
+      "source_file": "vybe-ai-back\\src\\services\\video-generation.service.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.video_generation.service.import_openai_video_provider_js",
+      "label": "../providers/openai-video.provider.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\video-generation.service.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.video_generation.service.import_google_video_provider_js",
+      "label": "../providers/google-video.provider.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\video-generation.service.js",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.video_generation.service.generateSoraVideoService",
+      "label": "generateSoraVideoService",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\video-generation.service.js",
+      "source_location": "L4",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.video_generation.service.startVeoVideoService",
+      "label": "startVeoVideoService",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\video-generation.service.js",
+      "source_location": "L8",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.services.video_generation.service.pollVeoVideoService",
+      "label": "pollVeoVideoService",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\services\\video-generation.service.js",
+      "source_location": "L12",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.utils.provider_fallback",
+      "label": "provider-fallback.js",
+      "type": "module",
+      "description": "TypeScript module provider-fallback.js",
+      "source_file": "vybe-ai-back\\src\\utils\\provider-fallback.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.utils.provider_fallback.import_http_js",
+      "label": "../config/http.js",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\utils\\provider-fallback.js",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_back.src.utils.provider_fallback.buildProviderFallback",
+      "label": "buildProviderFallback",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-back\\src\\utils\\provider-fallback.js",
+      "source_location": "L10",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App",
+      "label": "App.tsx",
+      "type": "module",
+      "description": "TypeScript module App.tsx",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L6",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.import_lucide_react",
+      "label": "lucide-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L7",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.import_types",
+      "label": "./types",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L24",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.import_data",
+      "label": "./data",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L25",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.import_DashboardView",
+      "label": "./views/DashboardView",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L27",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.import_PhotoStudioView",
+      "label": "./views/PhotoStudioView",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L28",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.import_VideoStudioView",
+      "label": "./views/VideoStudioView",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L29",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.import_AssetsView",
+      "label": "./views/AssetsView",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L30",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.import_SettingsView",
+      "label": "./views/SettingsView",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L31",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.import_ExportModal",
+      "label": "./components/ExportModal",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L32",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.App",
+      "label": "App",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L34",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.App.handleNavigate",
+      "label": "handleNavigate",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L110",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.App.handleAddProject",
+      "label": "handleAddProject",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L115",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.App.handleToggleFavorite",
+      "label": "handleToggleFavorite",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L132",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.App.handleDeleteAsset",
+      "label": "handleDeleteAsset",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L138",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.App.App.handleOpenExport",
+      "label": "handleOpenExport",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\App.tsx",
+      "source_location": "L143",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ExportModal",
+      "label": "ExportModal.tsx",
+      "type": "module",
+      "description": "TypeScript module ExportModal.tsx",
+      "source_file": "vybe-ai-web\\src\\components\\ExportModal.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ExportModal.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ExportModal.tsx",
+      "source_location": "L6",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ExportModal.import_lucide_react",
+      "label": "lucide-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ExportModal.tsx",
+      "source_location": "L7",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ExportModal.ExportModalProps",
+      "label": "ExportModalProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ExportModal.tsx",
+      "source_location": "L19",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ExportModal.ExportModal",
+      "label": "ExportModal",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ExportModal.tsx",
+      "source_location": "L35",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ExportModal.ExportModal.toggleChannel",
+      "label": "toggleChannel",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ExportModal.tsx",
+      "source_location": "L60",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ExportModal.ExportModal.triggerDownload",
+      "label": "triggerDownload",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ExportModal.tsx",
+      "source_location": "L68",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ExportModal.ExportModal.handleDownload",
+      "label": "handleDownload",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ExportModal.tsx",
+      "source_location": "L79",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ExportModal.ExportModal.handlePublish",
+      "label": "handlePublish",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ExportModal.tsx",
+      "source_location": "L122",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AssetCard",
+      "label": "AssetCard.tsx",
+      "type": "module",
+      "description": "TypeScript module AssetCard.tsx",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AssetCard.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AssetCard.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AssetCard.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AssetCard.import_types",
+      "label": "../../types",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AssetCard.tsx",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AssetCard.import_lucide_react",
+      "label": "lucide-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AssetCard.tsx",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AssetCard.AssetCardProps",
+      "label": "AssetCardProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AssetCard.tsx",
+      "source_location": "L5",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AssetCard.extractAudioFromVideo",
+      "label": "extractAudioFromVideo",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AssetCard.tsx",
+      "source_location": "L17",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AssetCard.audioBufferToWav",
+      "label": "audioBufferToWav",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AssetCard.tsx",
+      "source_location": "L61",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AssetCard.audioBufferToWav.writeStr",
+      "label": "writeStr",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AssetCard.tsx",
+      "source_location": "L73",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AssetCard.AssetCard",
+      "label": "AssetCard",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AssetCard.tsx",
+      "source_location": "L103",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AssetCard.AssetCard.formatTime",
+      "label": "formatTime",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AssetCard.tsx",
+      "source_location": "L120",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AssetCard.AssetCard.handleSeek",
+      "label": "handleSeek",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AssetCard.tsx",
+      "source_location": "L127",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AssetCard.AssetCard.togglePlay",
+      "label": "togglePlay",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AssetCard.tsx",
+      "source_location": "L141",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AssetCard.AssetCard.handleEnded",
+      "label": "handleEnded",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AssetCard.tsx",
+      "source_location": "L157",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AudioTrimmer",
+      "label": "AudioTrimmer.tsx",
+      "type": "module",
+      "description": "TypeScript module AudioTrimmer.tsx",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AudioTrimmer.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AudioTrimmer.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AudioTrimmer.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AudioTrimmer.import_lucide_react",
+      "label": "lucide-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AudioTrimmer.tsx",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmerProps",
+      "label": "AudioTrimmerProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AudioTrimmer.tsx",
+      "source_location": "L4",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AudioTrimmer.formatTime",
+      "label": "formatTime",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AudioTrimmer.tsx",
+      "source_location": "L12",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer",
+      "label": "AudioTrimmer",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AudioTrimmer.tsx",
+      "source_location": "L21",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer.onTimeUpdate",
+      "label": "onTimeUpdate",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AudioTrimmer.tsx",
+      "source_location": "L88",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer.onEnded",
+      "label": "onEnded",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AudioTrimmer.tsx",
+      "source_location": "L96",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer.onMove",
+      "label": "onMove",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AudioTrimmer.tsx",
+      "source_location": "L226",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer.onUp",
+      "label": "onUp",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AudioTrimmer.tsx",
+      "source_location": "L254",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer.togglePlay",
+      "label": "togglePlay",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\AudioTrimmer.tsx",
+      "source_location": "L265",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.ProjectCard",
+      "label": "ProjectCard.tsx",
+      "type": "module",
+      "description": "TypeScript module ProjectCard.tsx",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\ProjectCard.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.ProjectCard.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\ProjectCard.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.ProjectCard.import_types",
+      "label": "../../types",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\ProjectCard.tsx",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.ProjectCard.import_lucide_react",
+      "label": "lucide-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\ProjectCard.tsx",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.ProjectCard.ProjectCardProps",
+      "label": "ProjectCardProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\ProjectCard.tsx",
+      "source_location": "L5",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.ProjectCard.ProjectCard",
+      "label": "ProjectCard",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\ProjectCard.tsx",
+      "source_location": "L12",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.PromptInput",
+      "label": "PromptInput.tsx",
+      "type": "module",
+      "description": "TypeScript module PromptInput.tsx",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\PromptInput.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.PromptInput.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\PromptInput.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.PromptInput.import_lucide_react",
+      "label": "lucide-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\PromptInput.tsx",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.PromptInput.PromptInputProps",
+      "label": "PromptInputProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\PromptInput.tsx",
+      "source_location": "L4",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.PromptInput.PromptInput",
+      "label": "PromptInput",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\PromptInput.tsx",
+      "source_location": "L22",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.PromptInput.PromptInput.handleMicClick",
+      "label": "handleMicClick",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\PromptInput.tsx",
+      "source_location": "L46",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.ProviderSelector",
+      "label": "ProviderSelector.tsx",
+      "type": "module",
+      "description": "TypeScript module ProviderSelector.tsx",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\ProviderSelector.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.ProviderSelector.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\ProviderSelector.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.ProviderSelector.import_lucide_react",
+      "label": "lucide-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\ProviderSelector.tsx",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.ProviderSelector.ProviderSelectorProps",
+      "label": "ProviderSelectorProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\ProviderSelector.tsx",
+      "source_location": "L4",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.ProviderSelector.ProviderSelector",
+      "label": "ProviderSelector",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\ProviderSelector.tsx",
+      "source_location": "L12",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.StatusIndicator",
+      "label": "StatusIndicator.tsx",
+      "type": "module",
+      "description": "TypeScript module StatusIndicator.tsx",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\StatusIndicator.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.StatusIndicator.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\StatusIndicator.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.StatusIndicator.StatusIndicatorProps",
+      "label": "StatusIndicatorProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\StatusIndicator.tsx",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.StatusIndicator.StatusIndicator",
+      "label": "StatusIndicator",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\StatusIndicator.tsx",
+      "source_location": "L9",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.Toast",
+      "label": "Toast.tsx",
+      "type": "module",
+      "description": "TypeScript module Toast.tsx",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\Toast.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.Toast.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\Toast.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.Toast.ToastProps",
+      "label": "ToastProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\Toast.tsx",
+      "source_location": "L4",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.Toast.Toast",
+      "label": "Toast",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\Toast.tsx",
+      "source_location": "L9",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.UploadDropzone",
+      "label": "UploadDropzone.tsx",
+      "type": "module",
+      "description": "TypeScript module UploadDropzone.tsx",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\UploadDropzone.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.UploadDropzone.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\UploadDropzone.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.UploadDropzone.import_lucide_react",
+      "label": "lucide-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\UploadDropzone.tsx",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzoneProps",
+      "label": "UploadDropzoneProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\UploadDropzone.tsx",
+      "source_location": "L4",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone",
+      "label": "UploadDropzone",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\UploadDropzone.tsx",
+      "source_location": "L17",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone.handleDragOver",
+      "label": "handleDragOver",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\UploadDropzone.tsx",
+      "source_location": "L31",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone.handleDragLeave",
+      "label": "handleDragLeave",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\UploadDropzone.tsx",
+      "source_location": "L36",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone.handleDrop",
+      "label": "handleDrop",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\UploadDropzone.tsx",
+      "source_location": "L38",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone.handleFileChange",
+      "label": "handleFileChange",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\components\\ui\\UploadDropzone.tsx",
+      "source_location": "L45",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.content.socialPresets",
+      "label": "socialPresets.ts",
+      "type": "module",
+      "description": "TypeScript module socialPresets.ts",
+      "source_file": "vybe-ai-web\\src\\content\\socialPresets.ts",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.content.socialPresets.SocialPreset",
+      "label": "SocialPreset",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\content\\socialPresets.ts",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.data",
+      "label": "data.ts",
+      "type": "module",
+      "description": "TypeScript module data.ts",
+      "source_file": "vybe-ai-web\\src\\data.ts",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.data.import_types",
+      "label": "./types",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\data.ts",
+      "source_location": "L6",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.hooks.useFeedBack",
+      "label": "useFeedBack.ts",
+      "type": "module",
+      "description": "TypeScript module useFeedBack.ts",
+      "source_file": "vybe-ai-web\\src\\hooks\\useFeedBack.ts",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.hooks.useFeedBack.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\hooks\\useFeedBack.ts",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.hooks.useFeedBack.useFeedback",
+      "label": "useFeedback",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\hooks\\useFeedBack.ts",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.main",
+      "label": "main.tsx",
+      "type": "module",
+      "description": "TypeScript module main.tsx",
+      "source_file": "vybe-ai-web\\src\\main.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.main.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\main.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.main.import_client",
+      "label": "react-dom/client",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\main.tsx",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.main.import_App_tsx",
+      "label": "./App.tsx",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\main.tsx",
+      "source_location": "L3",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.main.import_index_css",
+      "label": "./index.css",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\main.tsx",
+      "source_location": "L4",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.services.fluxService",
+      "label": "fluxService.ts",
+      "type": "module",
+      "description": "TypeScript module fluxService.ts",
+      "source_file": "vybe-ai-web\\src\\services\\fluxService.ts",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.services.fluxService.generateFluxImage",
+      "label": "generateFluxImage",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\services\\fluxService.ts",
+      "source_location": "L6",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.types",
+      "label": "types.ts",
+      "type": "module",
+      "description": "TypeScript module types.ts",
+      "source_file": "vybe-ai-web\\src\\types.ts",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.types.Project",
+      "label": "Project",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\types.ts",
+      "source_location": "L8",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.types.Asset",
+      "label": "Asset",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\types.ts",
+      "source_location": "L19",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.types.ActivityLog",
+      "label": "ActivityLog",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\types.ts",
+      "source_location": "L30",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.types.PhotoWorkflowState",
+      "label": "PhotoWorkflowState",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\types.ts",
+      "source_location": "L38",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.types.VideoWorkflowState",
+      "label": "VideoWorkflowState",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\types.ts",
+      "source_location": "L47",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.utils.mediaUtils",
+      "label": "mediaUtils.ts",
+      "type": "module",
+      "description": "TypeScript module mediaUtils.ts",
+      "source_file": "vybe-ai-web\\src\\utils\\mediaUtils.ts",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.utils.mediaUtils.mergeAudioIntoVideo",
+      "label": "mergeAudioIntoVideo",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\utils\\mediaUtils.ts",
+      "source_location": "L6",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.utils.mediaUtils.mergeAudioIntoVideo.drawLoop",
+      "label": "drawLoop",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\utils\\mediaUtils.ts",
+      "source_location": "L93",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.utils.mediaUtils.buildTrimmedAudioStream",
+      "label": "buildTrimmedAudioStream",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\utils\\mediaUtils.ts",
+      "source_location": "L125",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.AssetsView",
+      "label": "AssetsView.tsx",
+      "type": "module",
+      "description": "TypeScript module AssetsView.tsx",
+      "source_file": "vybe-ai-web\\src\\views\\AssetsView.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.AssetsView.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\AssetsView.tsx",
+      "source_location": "L6",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.AssetsView.import_lucide_react",
+      "label": "lucide-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\AssetsView.tsx",
+      "source_location": "L7",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.AssetsView.import_types",
+      "label": "../types",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\AssetsView.tsx",
+      "source_location": "L19",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.AssetsView.import_useFeedBack",
+      "label": "../hooks/useFeedBack",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\AssetsView.tsx",
+      "source_location": "L23",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.AssetsView.import_Toast",
+      "label": "../components/ui/Toast",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\AssetsView.tsx",
+      "source_location": "L24",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.AssetsView.import_AssetCard",
+      "label": "../components/ui/AssetCard",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\AssetsView.tsx",
+      "source_location": "L25",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.AssetsView.AssetsViewProps",
+      "label": "AssetsViewProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\AssetsView.tsx",
+      "source_location": "L27",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.AssetsView.AssetsView",
+      "label": "AssetsView",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\AssetsView.tsx",
+      "source_location": "L39",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.AssetsView.AssetsView.handleUploadClick",
+      "label": "handleUploadClick",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\AssetsView.tsx",
+      "source_location": "L76",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.AssetsView.AssetsView.handleFileUploaded",
+      "label": "handleFileUploaded",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\AssetsView.tsx",
+      "source_location": "L80",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.AssetsView.AssetsView.simulateDownload",
+      "label": "simulateDownload",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\AssetsView.tsx",
+      "source_location": "L124",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.DashboardView",
+      "label": "DashboardView.tsx",
+      "type": "module",
+      "description": "TypeScript module DashboardView.tsx",
+      "source_file": "vybe-ai-web\\src\\views\\DashboardView.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.DashboardView.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\DashboardView.tsx",
+      "source_location": "L6",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.DashboardView.import_lucide_react",
+      "label": "lucide-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\DashboardView.tsx",
+      "source_location": "L7",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.DashboardView.import_types",
+      "label": "../types",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\DashboardView.tsx",
+      "source_location": "L8",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.DashboardView.import_ProjectCard",
+      "label": "../components/ui/ProjectCard",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\DashboardView.tsx",
+      "source_location": "L9",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.DashboardView.DashboardViewProps",
+      "label": "DashboardViewProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\DashboardView.tsx",
+      "source_location": "L11",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.DashboardView.DashboardView",
+      "label": "DashboardView",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\DashboardView.tsx",
+      "source_location": "L18",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView",
+      "label": "PhotoStudioView.tsx",
+      "type": "module",
+      "description": "TypeScript module PhotoStudioView.tsx",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L6",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.import_lucide_react",
+      "label": "lucide-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L7",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.import_types",
+      "label": "../types",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L20",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.import_socialPresets",
+      "label": "../content/socialPresets",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L21",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.import_ProviderSelector",
+      "label": "../components/ui/ProviderSelector",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L23",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.import_UploadDropzone",
+      "label": "../components/ui/UploadDropzone",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L24",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.import_PromptInput",
+      "label": "../components/ui/PromptInput",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L25",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.import_Toast",
+      "label": "../components/ui/Toast",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L26",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.import_useFeedBack",
+      "label": "../hooks/useFeedBack",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L27",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioViewProps",
+      "label": "PhotoStudioViewProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L29",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.dataURLtoBlob",
+      "label": "dataURLtoBlob",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L55",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.FormatShape",
+      "label": "FormatShape",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L77",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.getOpenAiPhotoSize",
+      "label": "getOpenAiPhotoSize",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L90",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView",
+      "label": "PhotoStudioView",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L96",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView.handleClickOutside",
+      "label": "handleClickOutside",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L174",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView.processUploadedFile",
+      "label": "processUploadedFile",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L187",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView.handleGenerateClick",
+      "label": "handleGenerateClick",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L217",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView.handleGenerate",
+      "label": "handleGenerate",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L224",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView.handleLoadTestPrompt",
+      "label": "handleLoadTestPrompt",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\PhotoStudioView.tsx",
+      "source_location": "L389",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.SettingsView",
+      "label": "SettingsView.tsx",
+      "type": "module",
+      "description": "TypeScript module SettingsView.tsx",
+      "source_file": "vybe-ai-web\\src\\views\\SettingsView.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.SettingsView.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\SettingsView.tsx",
+      "source_location": "L6",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.SettingsView.import_lucide_react",
+      "label": "lucide-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\SettingsView.tsx",
+      "source_location": "L7",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.SettingsView.SettingsViewProps",
+      "label": "SettingsViewProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\SettingsView.tsx",
+      "source_location": "L26",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.SettingsView.SettingsView",
+      "label": "SettingsView",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\SettingsView.tsx",
+      "source_location": "L34",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.SettingsView.SettingsView.handleSwitchClick",
+      "label": "handleSwitchClick",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\SettingsView.tsx",
+      "source_location": "L73",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.SettingsView.SettingsView.handleDisconnectSocial",
+      "label": "handleDisconnectSocial",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\SettingsView.tsx",
+      "source_location": "L83",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.SettingsView.SettingsView.handleSaveSocialConnection",
+      "label": "handleSaveSocialConnection",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\SettingsView.tsx",
+      "source_location": "L89",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.SettingsView.SettingsView.handleSaveSettings",
+      "label": "handleSaveSettings",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\SettingsView.tsx",
+      "source_location": "L118",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView",
+      "label": "VideoStudioView.tsx",
+      "type": "module",
+      "description": "TypeScript module VideoStudioView.tsx",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.import_react",
+      "label": "react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L6",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.import_lucide_react",
+      "label": "lucide-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L7",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.import_types",
+      "label": "../types",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L21",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.import_socialPresets",
+      "label": "../content/socialPresets",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L22",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.import_ProviderSelector",
+      "label": "../components/ui/ProviderSelector",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L24",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.import_UploadDropzone",
+      "label": "../components/ui/UploadDropzone",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L25",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.import_PromptInput",
+      "label": "../components/ui/PromptInput",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L26",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.import_Toast",
+      "label": "../components/ui/Toast",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L27",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.import_AudioTrimmer",
+      "label": "../components/ui/AudioTrimmer",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L28",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.import_mediaUtils",
+      "label": "../utils/mediaUtils",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L29",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.import_useFeedBack",
+      "label": "../hooks/useFeedBack",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L30",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.VideoStudioViewProps",
+      "label": "VideoStudioViewProps",
+      "type": "interface",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L32",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.FormatShape",
+      "label": "FormatShape",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L79",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.dataURLtoBlob",
+      "label": "dataURLtoBlob",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L92",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.getOpenAiVideoSize",
+      "label": "getOpenAiVideoSize",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L103",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView",
+      "label": "VideoStudioView",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L109",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.handleClickOutside",
+      "label": "handleClickOutside",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L152",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.processUploadedFile",
+      "label": "processUploadedFile",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L197",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.handleAddMontageImages",
+      "label": "handleAddMontageImages",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L225",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.createMontage",
+      "label": "createMontage",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L237",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.handleGenerateClick",
+      "label": "handleGenerateClick",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L357",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.handleRenderVideo",
+      "label": "handleRenderVideo",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L369",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.handleLoadTestPrompt",
+      "label": "handleLoadTestPrompt",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L575",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.resetPlayback",
+      "label": "resetPlayback",
+      "type": "function",
+      "description": "",
+      "source_file": "vybe-ai-web\\src\\views\\VideoStudioView.tsx",
+      "source_location": "L636",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.src.vite_env.d",
+      "label": "vite-env.d.ts",
+      "type": "module",
+      "description": "TypeScript module vite-env.d.ts",
+      "source_file": "vybe-ai-web\\src\\vite-env.d.ts",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.vite.config",
+      "label": "vite.config.ts",
+      "type": "module",
+      "description": "TypeScript module vite.config.ts",
+      "source_file": "vybe-ai-web\\vite.config.ts",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.vite.config.import_vite",
+      "label": "@tailwindcss/vite",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\vite.config.ts",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.vite.config.import_plugin_react",
+      "label": "@vitejs/plugin-react",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\vite.config.ts",
+      "source_location": "L2",
+      "file_type": "code"
+    },
+    {
+      "id": "vybe_ai_web.vite.config.import_path",
+      "label": "path",
+      "type": "import",
+      "description": "",
+      "source_file": "vybe-ai-web\\vite.config.ts",
+      "source_location": "L3",
+      "file_type": "code"
+    }
+  ],
+  "links": [
+    {
+      "source": ".claude.helpers.github_safe",
+      "target": ".claude.helpers.github_safe.import_child_process",
+      "relation": "imports_from"
+    },
+    {
+      "source": ".claude.helpers.github_safe",
+      "target": ".claude.helpers.github_safe.import_fs",
+      "relation": "imports_from"
+    },
+    {
+      "source": ".claude.helpers.github_safe",
+      "target": ".claude.helpers.github_safe.import_os",
+      "relation": "imports_from"
+    },
+    {
+      "source": ".claude.helpers.github_safe",
+      "target": ".claude.helpers.github_safe.import_path",
+      "relation": "imports_from"
+    },
+    {
+      "source": ".claude.helpers.github_safe",
+      "target": ".claude.helpers.github_safe.import_crypto",
+      "relation": "imports_from"
+    },
+    {
+      "source": ".claude.helpers.memory",
+      "target": ".claude.helpers.memory.loadMemory",
+      "relation": "contains"
+    },
+    {
+      "source": ".claude.helpers.memory",
+      "target": ".claude.helpers.memory.saveMemory",
+      "relation": "contains"
+    },
+    {
+      "source": ".claude.helpers.router",
+      "target": ".claude.helpers.router.routeTask",
+      "relation": "contains"
+    },
+    {
+      "source": ".claude.helpers.statusline",
+      "target": ".claude.helpers.statusline.resolveBannerVersion",
+      "relation": "contains"
+    },
+    {
+      "source": ".claude.helpers.statusline",
+      "target": ".claude.helpers.statusline.getUserInfo",
+      "relation": "contains"
+    },
+    {
+      "source": ".claude.helpers.statusline",
+      "target": ".claude.helpers.statusline.getLearningStats",
+      "relation": "contains"
+    },
+    {
+      "source": ".claude.helpers.statusline",
+      "target": ".claude.helpers.statusline.getV3Progress",
+      "relation": "contains"
+    },
+    {
+      "source": ".claude.helpers.statusline",
+      "target": ".claude.helpers.statusline.getSecurityStatus",
+      "relation": "contains"
+    },
+    {
+      "source": ".claude.helpers.statusline",
+      "target": ".claude.helpers.statusline.getSwarmStatus",
+      "relation": "contains"
+    },
+    {
+      "source": ".claude.helpers.statusline",
+      "target": ".claude.helpers.statusline.getSystemMetrics",
+      "relation": "contains"
+    },
+    {
+      "source": ".claude.helpers.statusline",
+      "target": ".claude.helpers.statusline.progressBar",
+      "relation": "contains"
+    },
+    {
+      "source": ".claude.helpers.statusline",
+      "target": ".claude.helpers.statusline.generateStatusline",
+      "relation": "contains"
+    },
+    {
+      "source": ".claude.helpers.statusline",
+      "target": ".claude.helpers.statusline.generateJSON",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.server",
+      "target": "vybe_ai_back.server.import_server_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.app",
+      "target": "vybe_ai_back.src.app.import_express",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.app",
+      "target": "vybe_ai_back.src.app.import_cors",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.app",
+      "target": "vybe_ai_back.src.app.import_image_routes_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.app",
+      "target": "vybe_ai_back.src.app.import_error_handler_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.app",
+      "target": "vybe_ai_back.src.app.createApp",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.config.env",
+      "target": "vybe_ai_back.src.config.env.import_dns",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.config.env",
+      "target": "vybe_ai_back.src.config.env.import_dotenv",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.image.controller",
+      "target": "vybe_ai_back.src.controllers.image.controller.import_generate_image_dto_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.image.controller",
+      "target": "vybe_ai_back.src.controllers.image.controller.import_image_generation_service_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.image.controller",
+      "target": "vybe_ai_back.src.controllers.image.controller.generateGoogleImageController",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.image.controller",
+      "target": "vybe_ai_back.src.controllers.image.controller.generateOpenAiImageController",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.image.controller",
+      "target": "vybe_ai_back.src.controllers.image.controller.editOpenAiImageController",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.image.controller",
+      "target": "vybe_ai_back.src.controllers.image.controller.generateHuggingFaceImageController",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.prompt.controller",
+      "target": "vybe_ai_back.src.controllers.prompt.controller.import_generate_test_prompt_dto_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.prompt.controller",
+      "target": "vybe_ai_back.src.controllers.prompt.controller.import_prompt_generation_service_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.prompt.controller",
+      "target": "vybe_ai_back.src.controllers.prompt.controller.generateTestPromptController",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.video.controller",
+      "target": "vybe_ai_back.src.controllers.video.controller.import_generate_video_dto_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.video.controller",
+      "target": "vybe_ai_back.src.controllers.video.controller.import_video_generation_service_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.video.controller",
+      "target": "vybe_ai_back.src.controllers.video.controller.import_provider_error_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.video.controller",
+      "target": "vybe_ai_back.src.controllers.video.controller.import_app_error_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.video.controller",
+      "target": "vybe_ai_back.src.controllers.video.controller.generateGoogleVideoController",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.video.controller",
+      "target": "vybe_ai_back.src.controllers.video.controller.pollGoogleVideoController",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.controllers.video.controller",
+      "target": "vybe_ai_back.src.controllers.video.controller.generateOpenAiVideoController",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_image.dto",
+      "target": "vybe_ai_back.src.dto.generate_image.dto.import_http_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_image.dto",
+      "target": "vybe_ai_back.src.dto.generate_image.dto.import_app_error_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_image.dto",
+      "target": "vybe_ai_back.src.dto.generate_image.dto.import_env_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_image.dto",
+      "target": "vybe_ai_back.src.dto.generate_image.dto.requirePrompt",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_image.dto",
+      "target": "vybe_ai_back.src.dto.generate_image.dto.resolveOpenAiSize",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_image.dto",
+      "target": "vybe_ai_back.src.dto.generate_image.dto.resolveGoogleRequest",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_image.dto",
+      "target": "vybe_ai_back.src.dto.generate_image.dto.resolveOpenAiRequest",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_image.dto",
+      "target": "vybe_ai_back.src.dto.generate_image.dto.resolveOpenAiEditRequest",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_image.dto",
+      "target": "vybe_ai_back.src.dto.generate_image.dto.resolveHuggingFaceRequest",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_test_prompt.dto",
+      "target": "vybe_ai_back.src.dto.generate_test_prompt.dto.import_app_error_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_test_prompt.dto",
+      "target": "vybe_ai_back.src.dto.generate_test_prompt.dto.import_http_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_test_prompt.dto",
+      "target": "vybe_ai_back.src.dto.generate_test_prompt.dto.import_env_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_test_prompt.dto",
+      "target": "vybe_ai_back.src.dto.generate_test_prompt.dto.resolveTestPromptRequest",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_video.dto",
+      "target": "vybe_ai_back.src.dto.generate_video.dto.import_app_error_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_video.dto",
+      "target": "vybe_ai_back.src.dto.generate_video.dto.import_http_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_video.dto",
+      "target": "vybe_ai_back.src.dto.generate_video.dto.import_env_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_video.dto",
+      "target": "vybe_ai_back.src.dto.generate_video.dto.resolveGoogleVideoRequest",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_video.dto",
+      "target": "vybe_ai_back.src.dto.generate_video.dto.resolveVeoPollRequest",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_video.dto",
+      "target": "vybe_ai_back.src.dto.generate_video.dto.resolveSize",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_video.dto",
+      "target": "vybe_ai_back.src.dto.generate_video.dto.resolveSeconds",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.dto.generate_video.dto",
+      "target": "vybe_ai_back.src.dto.generate_video.dto.resolveVideoRequest",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.errors.app_error",
+      "target": "vybe_ai_back.src.errors.app_error.AppError",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.errors.app_error.AppError",
+      "target": "vybe_ai_back.src.errors.app_error.AppError.constructor",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.errors.provider_error",
+      "target": "vybe_ai_back.src.errors.provider_error.ProviderError",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.errors.provider_error.ProviderError",
+      "target": "vybe_ai_back.src.errors.provider_error.ProviderError.constructor",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.middlewares.error_handler",
+      "target": "vybe_ai_back.src.middlewares.error_handler.import_http_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.middlewares.error_handler",
+      "target": "vybe_ai_back.src.middlewares.error_handler.import_app_error_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.middlewares.error_handler",
+      "target": "vybe_ai_back.src.middlewares.error_handler.import_provider_error_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.middlewares.error_handler",
+      "target": "vybe_ai_back.src.middlewares.error_handler.parseProviderError",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.middlewares.error_handler",
+      "target": "vybe_ai_back.src.middlewares.error_handler.errorHandler",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.middlewares.upload.middleware",
+      "target": "vybe_ai_back.src.middlewares.upload.middleware.import_multer",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_image.provider",
+      "target": "vybe_ai_back.src.providers.google_image.provider.import_genai",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_image.provider",
+      "target": "vybe_ai_back.src.providers.google_image.provider.import_http_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_image.provider",
+      "target": "vybe_ai_back.src.providers.google_image.provider.import_provider_error_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_image.provider",
+      "target": "vybe_ai_back.src.providers.google_image.provider.createClient",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_image.provider",
+      "target": "vybe_ai_back.src.providers.google_image.provider.generateGoogleImage",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_text.provider",
+      "target": "vybe_ai_back.src.providers.google_text.provider.import_genai",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_text.provider",
+      "target": "vybe_ai_back.src.providers.google_text.provider.import_provider_error_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_text.provider",
+      "target": "vybe_ai_back.src.providers.google_text.provider.buildUserPrompt",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_text.provider",
+      "target": "vybe_ai_back.src.providers.google_text.provider.createClient",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_text.provider",
+      "target": "vybe_ai_back.src.providers.google_text.provider.generateTestPrompt",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_video.provider",
+      "target": "vybe_ai_back.src.providers.google_video.provider.import_genai",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_video.provider",
+      "target": "vybe_ai_back.src.providers.google_video.provider.import_provider_error_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_video.provider",
+      "target": "vybe_ai_back.src.providers.google_video.provider.createClient",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_video.provider",
+      "target": "vybe_ai_back.src.providers.google_video.provider.startVeoVideoGeneration",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.google_video.provider",
+      "target": "vybe_ai_back.src.providers.google_video.provider.pollVeoVideoGeneration",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.huggingface_image.provider",
+      "target": "vybe_ai_back.src.providers.huggingface_image.provider.import_inference",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.huggingface_image.provider",
+      "target": "vybe_ai_back.src.providers.huggingface_image.provider.import_http_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.huggingface_image.provider",
+      "target": "vybe_ai_back.src.providers.huggingface_image.provider.import_provider_error_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.huggingface_image.provider",
+      "target": "vybe_ai_back.src.providers.huggingface_image.provider.creativityToGuidance",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.huggingface_image.provider",
+      "target": "vybe_ai_back.src.providers.huggingface_image.provider.resolveHfModel",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.huggingface_image.provider",
+      "target": "vybe_ai_back.src.providers.huggingface_image.provider.generateHuggingFaceImage",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.huggingface_image.provider",
+      "target": "vybe_ai_back.src.providers.huggingface_image.provider.blobToResponse",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_image.provider",
+      "target": "vybe_ai_back.src.providers.openai_image.provider.import_http_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_image.provider",
+      "target": "vybe_ai_back.src.providers.openai_image.provider.import_provider_error_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_image.provider",
+      "target": "vybe_ai_back.src.providers.openai_image.provider.openaiJsonHeaders",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_image.provider",
+      "target": "vybe_ai_back.src.providers.openai_image.provider.openaiAuthHeader",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_image.provider",
+      "target": "vybe_ai_back.src.providers.openai_image.provider.resolveQualityParam",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_image.provider",
+      "target": "vybe_ai_back.src.providers.openai_image.provider.callGenerationsEndpoint",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_image.provider",
+      "target": "vybe_ai_back.src.providers.openai_image.provider.generateOpenAiImage",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_image.provider",
+      "target": "vybe_ai_back.src.providers.openai_image.provider.editOpenAiImage",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_image.provider",
+      "target": "vybe_ai_back.src.providers.openai_image.provider.editViaVisionAndGenerate",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_video.provider",
+      "target": "vybe_ai_back.src.providers.openai_video.provider.import_provider_error_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_video.provider",
+      "target": "vybe_ai_back.src.providers.openai_video.provider.openaiHeaders",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_video.provider",
+      "target": "vybe_ai_back.src.providers.openai_video.provider.createVideoJob",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_video.provider",
+      "target": "vybe_ai_back.src.providers.openai_video.provider.pollVideoJob",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_video.provider",
+      "target": "vybe_ai_back.src.providers.openai_video.provider.downloadVideoBuffer",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.providers.openai_video.provider",
+      "target": "vybe_ai_back.src.providers.openai_video.provider.generateSoraVideo",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.routes.image.routes",
+      "target": "vybe_ai_back.src.routes.image.routes.import_express",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.routes.image.routes",
+      "target": "vybe_ai_back.src.routes.image.routes.import_image_controller_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.routes.image.routes",
+      "target": "vybe_ai_back.src.routes.image.routes.import_prompt_controller_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.routes.image.routes",
+      "target": "vybe_ai_back.src.routes.image.routes.import_video_controller_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.routes.image.routes",
+      "target": "vybe_ai_back.src.routes.image.routes.import_upload_middleware_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.server",
+      "target": "vybe_ai_back.src.server.import_env_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.server",
+      "target": "vybe_ai_back.src.server.import_app_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.services.image_generation.service",
+      "target": "vybe_ai_back.src.services.image_generation.service.import_google_image_provider_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.services.image_generation.service",
+      "target": "vybe_ai_back.src.services.image_generation.service.import_openai_image_provider_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.services.image_generation.service",
+      "target": "vybe_ai_back.src.services.image_generation.service.import_huggingface_image_provider_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.services.image_generation.service",
+      "target": "vybe_ai_back.src.services.image_generation.service.generateGoogleImageService",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.services.image_generation.service",
+      "target": "vybe_ai_back.src.services.image_generation.service.generateOpenAiImageService",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.services.image_generation.service",
+      "target": "vybe_ai_back.src.services.image_generation.service.editOpenAiImageService",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.services.image_generation.service",
+      "target": "vybe_ai_back.src.services.image_generation.service.generateHuggingFaceImageService",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.services.prompt_generation.service",
+      "target": "vybe_ai_back.src.services.prompt_generation.service.import_google_text_provider_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.services.prompt_generation.service",
+      "target": "vybe_ai_back.src.services.prompt_generation.service.generateTestPromptService",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.services.video_generation.service",
+      "target": "vybe_ai_back.src.services.video_generation.service.import_openai_video_provider_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.services.video_generation.service",
+      "target": "vybe_ai_back.src.services.video_generation.service.import_google_video_provider_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.services.video_generation.service",
+      "target": "vybe_ai_back.src.services.video_generation.service.generateSoraVideoService",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.services.video_generation.service",
+      "target": "vybe_ai_back.src.services.video_generation.service.startVeoVideoService",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.services.video_generation.service",
+      "target": "vybe_ai_back.src.services.video_generation.service.pollVeoVideoService",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_back.src.utils.provider_fallback",
+      "target": "vybe_ai_back.src.utils.provider_fallback.import_http_js",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_back.src.utils.provider_fallback",
+      "target": "vybe_ai_back.src.utils.provider_fallback.buildProviderFallback",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.App",
+      "target": "vybe_ai_web.src.App.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.App",
+      "target": "vybe_ai_web.src.App.import_lucide_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.App",
+      "target": "vybe_ai_web.src.App.import_types",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.App",
+      "target": "vybe_ai_web.src.App.import_data",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.App",
+      "target": "vybe_ai_web.src.App.import_DashboardView",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.App",
+      "target": "vybe_ai_web.src.App.import_PhotoStudioView",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.App",
+      "target": "vybe_ai_web.src.App.import_VideoStudioView",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.App",
+      "target": "vybe_ai_web.src.App.import_AssetsView",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.App",
+      "target": "vybe_ai_web.src.App.import_SettingsView",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.App",
+      "target": "vybe_ai_web.src.App.import_ExportModal",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.App",
+      "target": "vybe_ai_web.src.App.App",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.App.App",
+      "target": "vybe_ai_web.src.App.App.handleNavigate",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.App.App",
+      "target": "vybe_ai_web.src.App.App.handleAddProject",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.App.App",
+      "target": "vybe_ai_web.src.App.App.handleToggleFavorite",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.App.App",
+      "target": "vybe_ai_web.src.App.App.handleDeleteAsset",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.App.App",
+      "target": "vybe_ai_web.src.App.App.handleOpenExport",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ExportModal",
+      "target": "vybe_ai_web.src.components.ExportModal.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ExportModal",
+      "target": "vybe_ai_web.src.components.ExportModal.import_lucide_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ExportModal",
+      "target": "vybe_ai_web.src.components.ExportModal.ExportModalProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ExportModal",
+      "target": "vybe_ai_web.src.components.ExportModal.ExportModal",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ExportModal.ExportModal",
+      "target": "vybe_ai_web.src.components.ExportModal.ExportModal.toggleChannel",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ExportModal.ExportModal",
+      "target": "vybe_ai_web.src.components.ExportModal.ExportModal.triggerDownload",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ExportModal.ExportModal",
+      "target": "vybe_ai_web.src.components.ExportModal.ExportModal.handleDownload",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ExportModal.ExportModal",
+      "target": "vybe_ai_web.src.components.ExportModal.ExportModal.handlePublish",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AssetCard",
+      "target": "vybe_ai_web.src.components.ui.AssetCard.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AssetCard",
+      "target": "vybe_ai_web.src.components.ui.AssetCard.import_types",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AssetCard",
+      "target": "vybe_ai_web.src.components.ui.AssetCard.import_lucide_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AssetCard",
+      "target": "vybe_ai_web.src.components.ui.AssetCard.AssetCardProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AssetCard",
+      "target": "vybe_ai_web.src.components.ui.AssetCard.extractAudioFromVideo",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AssetCard",
+      "target": "vybe_ai_web.src.components.ui.AssetCard.audioBufferToWav",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AssetCard.audioBufferToWav",
+      "target": "vybe_ai_web.src.components.ui.AssetCard.audioBufferToWav.writeStr",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AssetCard",
+      "target": "vybe_ai_web.src.components.ui.AssetCard.AssetCard",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AssetCard.AssetCard",
+      "target": "vybe_ai_web.src.components.ui.AssetCard.AssetCard.formatTime",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AssetCard.AssetCard",
+      "target": "vybe_ai_web.src.components.ui.AssetCard.AssetCard.handleSeek",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AssetCard.AssetCard",
+      "target": "vybe_ai_web.src.components.ui.AssetCard.AssetCard.togglePlay",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AssetCard.AssetCard",
+      "target": "vybe_ai_web.src.components.ui.AssetCard.AssetCard.handleEnded",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AudioTrimmer",
+      "target": "vybe_ai_web.src.components.ui.AudioTrimmer.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AudioTrimmer",
+      "target": "vybe_ai_web.src.components.ui.AudioTrimmer.import_lucide_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AudioTrimmer",
+      "target": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmerProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AudioTrimmer",
+      "target": "vybe_ai_web.src.components.ui.AudioTrimmer.formatTime",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AudioTrimmer",
+      "target": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer",
+      "target": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer.onTimeUpdate",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer",
+      "target": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer.onEnded",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer",
+      "target": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer.onMove",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer",
+      "target": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer.onUp",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer",
+      "target": "vybe_ai_web.src.components.ui.AudioTrimmer.AudioTrimmer.togglePlay",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.ProjectCard",
+      "target": "vybe_ai_web.src.components.ui.ProjectCard.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.ProjectCard",
+      "target": "vybe_ai_web.src.components.ui.ProjectCard.import_types",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.ProjectCard",
+      "target": "vybe_ai_web.src.components.ui.ProjectCard.import_lucide_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.ProjectCard",
+      "target": "vybe_ai_web.src.components.ui.ProjectCard.ProjectCardProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.ProjectCard",
+      "target": "vybe_ai_web.src.components.ui.ProjectCard.ProjectCard",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.PromptInput",
+      "target": "vybe_ai_web.src.components.ui.PromptInput.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.PromptInput",
+      "target": "vybe_ai_web.src.components.ui.PromptInput.import_lucide_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.PromptInput",
+      "target": "vybe_ai_web.src.components.ui.PromptInput.PromptInputProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.PromptInput",
+      "target": "vybe_ai_web.src.components.ui.PromptInput.PromptInput",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.PromptInput.PromptInput",
+      "target": "vybe_ai_web.src.components.ui.PromptInput.PromptInput.handleMicClick",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.ProviderSelector",
+      "target": "vybe_ai_web.src.components.ui.ProviderSelector.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.ProviderSelector",
+      "target": "vybe_ai_web.src.components.ui.ProviderSelector.import_lucide_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.ProviderSelector",
+      "target": "vybe_ai_web.src.components.ui.ProviderSelector.ProviderSelectorProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.ProviderSelector",
+      "target": "vybe_ai_web.src.components.ui.ProviderSelector.ProviderSelector",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.StatusIndicator",
+      "target": "vybe_ai_web.src.components.ui.StatusIndicator.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.StatusIndicator",
+      "target": "vybe_ai_web.src.components.ui.StatusIndicator.StatusIndicatorProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.StatusIndicator",
+      "target": "vybe_ai_web.src.components.ui.StatusIndicator.StatusIndicator",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.Toast",
+      "target": "vybe_ai_web.src.components.ui.Toast.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.Toast",
+      "target": "vybe_ai_web.src.components.ui.Toast.ToastProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.Toast",
+      "target": "vybe_ai_web.src.components.ui.Toast.Toast",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.UploadDropzone",
+      "target": "vybe_ai_web.src.components.ui.UploadDropzone.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.UploadDropzone",
+      "target": "vybe_ai_web.src.components.ui.UploadDropzone.import_lucide_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.UploadDropzone",
+      "target": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzoneProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.UploadDropzone",
+      "target": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone",
+      "target": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone.handleDragOver",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone",
+      "target": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone.handleDragLeave",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone",
+      "target": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone.handleDrop",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone",
+      "target": "vybe_ai_web.src.components.ui.UploadDropzone.UploadDropzone.handleFileChange",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.content.socialPresets",
+      "target": "vybe_ai_web.src.content.socialPresets.SocialPreset",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.data",
+      "target": "vybe_ai_web.src.data.import_types",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.hooks.useFeedBack",
+      "target": "vybe_ai_web.src.hooks.useFeedBack.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.hooks.useFeedBack",
+      "target": "vybe_ai_web.src.hooks.useFeedBack.useFeedback",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.main",
+      "target": "vybe_ai_web.src.main.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.main",
+      "target": "vybe_ai_web.src.main.import_client",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.main",
+      "target": "vybe_ai_web.src.main.import_App_tsx",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.main",
+      "target": "vybe_ai_web.src.main.import_index_css",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.services.fluxService",
+      "target": "vybe_ai_web.src.services.fluxService.generateFluxImage",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.types",
+      "target": "vybe_ai_web.src.types.Project",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.types",
+      "target": "vybe_ai_web.src.types.Asset",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.types",
+      "target": "vybe_ai_web.src.types.ActivityLog",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.types",
+      "target": "vybe_ai_web.src.types.PhotoWorkflowState",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.types",
+      "target": "vybe_ai_web.src.types.VideoWorkflowState",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.utils.mediaUtils",
+      "target": "vybe_ai_web.src.utils.mediaUtils.mergeAudioIntoVideo",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.utils.mediaUtils.mergeAudioIntoVideo",
+      "target": "vybe_ai_web.src.utils.mediaUtils.mergeAudioIntoVideo.drawLoop",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.utils.mediaUtils",
+      "target": "vybe_ai_web.src.utils.mediaUtils.buildTrimmedAudioStream",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.AssetsView",
+      "target": "vybe_ai_web.src.views.AssetsView.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.AssetsView",
+      "target": "vybe_ai_web.src.views.AssetsView.import_lucide_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.AssetsView",
+      "target": "vybe_ai_web.src.views.AssetsView.import_types",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.AssetsView",
+      "target": "vybe_ai_web.src.views.AssetsView.import_useFeedBack",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.AssetsView",
+      "target": "vybe_ai_web.src.views.AssetsView.import_Toast",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.AssetsView",
+      "target": "vybe_ai_web.src.views.AssetsView.import_AssetCard",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.AssetsView",
+      "target": "vybe_ai_web.src.views.AssetsView.AssetsViewProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.AssetsView",
+      "target": "vybe_ai_web.src.views.AssetsView.AssetsView",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.AssetsView.AssetsView",
+      "target": "vybe_ai_web.src.views.AssetsView.AssetsView.handleUploadClick",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.AssetsView.AssetsView",
+      "target": "vybe_ai_web.src.views.AssetsView.AssetsView.handleFileUploaded",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.AssetsView.AssetsView",
+      "target": "vybe_ai_web.src.views.AssetsView.AssetsView.simulateDownload",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.DashboardView",
+      "target": "vybe_ai_web.src.views.DashboardView.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.DashboardView",
+      "target": "vybe_ai_web.src.views.DashboardView.import_lucide_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.DashboardView",
+      "target": "vybe_ai_web.src.views.DashboardView.import_types",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.DashboardView",
+      "target": "vybe_ai_web.src.views.DashboardView.import_ProjectCard",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.DashboardView",
+      "target": "vybe_ai_web.src.views.DashboardView.DashboardViewProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.DashboardView",
+      "target": "vybe_ai_web.src.views.DashboardView.DashboardView",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.import_lucide_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.import_types",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.import_socialPresets",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.import_ProviderSelector",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.import_UploadDropzone",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.import_PromptInput",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.import_Toast",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.import_useFeedBack",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioViewProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.dataURLtoBlob",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.FormatShape",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.getOpenAiPhotoSize",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView.handleClickOutside",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView.processUploadedFile",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView.handleGenerateClick",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView.handleGenerate",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView",
+      "target": "vybe_ai_web.src.views.PhotoStudioView.PhotoStudioView.handleLoadTestPrompt",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.SettingsView",
+      "target": "vybe_ai_web.src.views.SettingsView.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.SettingsView",
+      "target": "vybe_ai_web.src.views.SettingsView.import_lucide_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.SettingsView",
+      "target": "vybe_ai_web.src.views.SettingsView.SettingsViewProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.SettingsView",
+      "target": "vybe_ai_web.src.views.SettingsView.SettingsView",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.SettingsView.SettingsView",
+      "target": "vybe_ai_web.src.views.SettingsView.SettingsView.handleSwitchClick",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.SettingsView.SettingsView",
+      "target": "vybe_ai_web.src.views.SettingsView.SettingsView.handleDisconnectSocial",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.SettingsView.SettingsView",
+      "target": "vybe_ai_web.src.views.SettingsView.SettingsView.handleSaveSocialConnection",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.SettingsView.SettingsView",
+      "target": "vybe_ai_web.src.views.SettingsView.SettingsView.handleSaveSettings",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.import_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.import_lucide_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.import_types",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.import_socialPresets",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.import_ProviderSelector",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.import_UploadDropzone",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.import_PromptInput",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.import_Toast",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.import_AudioTrimmer",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.import_mediaUtils",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.import_useFeedBack",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.VideoStudioViewProps",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.FormatShape",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.dataURLtoBlob",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.getOpenAiVideoSize",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.handleClickOutside",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.processUploadedFile",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.handleAddMontageImages",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.createMontage",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.handleGenerateClick",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.handleRenderVideo",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.handleLoadTestPrompt",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView",
+      "target": "vybe_ai_web.src.views.VideoStudioView.VideoStudioView.resetPlayback",
+      "relation": "contains"
+    },
+    {
+      "source": "vybe_ai_web.vite.config",
+      "target": "vybe_ai_web.vite.config.import_vite",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.vite.config",
+      "target": "vybe_ai_web.vite.config.import_plugin_react",
+      "relation": "imports_from"
+    },
+    {
+      "source": "vybe_ai_web.vite.config",
+      "target": "vybe_ai_web.vite.config.import_path",
+      "relation": "imports_from"
+    }
+  ],
+  "built_at_commit": null
+}
