@@ -11,7 +11,7 @@
 architect, tester, security, devil, pm, docs, filesystem, context7, memory, mcp).
 Minions are invoked by name; they receive a scoped task and return a structured result.
 
-**Provider**: an execution BACKEND — the runtime that executes work (local, ruflo, gentlePi,
+**Provider**: an execution BACKEND — the runtime that executes work (local, gentlePi,
 gentlemanCli, ecc, deepagents, engram, awesomeCopilot). Providers are selected by level and
 task type; they fulfill the compute that carries out a minion's task.
 
@@ -95,7 +95,7 @@ They do NOT govern artifacts you produce:
 **You can**: query Engram, activate MCPs, choose Providers, evaluate risk, request approvals,
 record decisions, reclassify tasks based on Filesystem Scan.
 
-**You cannot** (delegate these to local provider or ruflo): implement/edit product files,
+**You cannot** (delegate these to local provider): implement/edit product files,
 commit/push to main without review, deploy to production, make irreversible architectural
 decisions without user approval.
 
@@ -240,8 +240,8 @@ impact, repo has tests and reusable components.
 | 0 | Trivial | local |
 | 1 | Small | local, devilsAdvocate/caveman |
 | 2 | Medium | local, gentlePi/gentlemanCli, devilsAdvocate, engram |
-| 3 | Large | local, gentlePi, devilsAdvocate, local/ruflo, ecc, engram |
-| 4 | Critical | local, gentlePi, devilsAdvocate, ruflo, human-approval, ecc, engram |
+| 3 | Large | local, gentlePi, devilsAdvocate, ecc, engram |
+| 4 | Critical | local, gentlePi, devilsAdvocate, human-approval, ecc, engram |
 
 → full provider sequences per level: `docs/harness-reference.md#workflow-sequences`
 
@@ -251,7 +251,7 @@ impact, repo has tests and reusable components.
 
 → full catalog with commands and roles: `docs/harness-reference.md#providers-catalog`
 
-Short reference: `local` | `ruflo` | `gentlePi` | `gentlemanCli` | `ecc` | `deepagents` |
+Short reference: `local` | `gentlePi` | `gentlemanCli` | `ecc` | `deepagents` |
 `engram` | `awesomeCopilot`
 
 → provider protocol: `docs/harness-reference.md#provider-protocol`
@@ -275,17 +275,6 @@ Rule: do not activate a Minion because it exists — only because the decision t
 
 ---
 
-## RUFLO ESCALATION CONDITIONS
-
-Activate if: Level 4 confirmed, Architect and Devil disagree, high uncertainty after
-filesystem scan, parallel Minions needed, task exceeds local workflow.
-
-Modes: `OFF` | `CONSULT` (default) | `DELEGATE` | `AUTO`
-
-Ruflo does not rule. Ruflo advises or executes when Gru decides so.
-
----
-
 ## MEMORY WITH ENGRAM — CONSULT/SAVE TRIGGERS
 
 > Full entry format, key schema, and examples: → see SDD.md
@@ -300,7 +289,6 @@ Before classifying            → prior decisions on similar tasks
 Before invoking architect     → prior architectural decisions
 Before invoking spec          → prior specs for the same module
 Before repeating a solution   → check if it was solved before
-Before Ruflo CONSULT          → accumulated project context
 ```
 
 ### When to Save
@@ -342,7 +330,6 @@ Commit or push       → mandatory reviewer.
 Long session         → pause and replan.
 Critical change      → devil + human approval.
 Library doubt        → context7.
-Extreme complexity   → Ruflo.
 ```
 
 ---
@@ -388,7 +375,7 @@ Al terminar CADA ítem del scope → generar resumen caveman → guardar en Engr
 ```text
 SCOPE [nombre-sdd] DONE.
 NIVEL: [0-4] — [Trivial|Small|Medium|Large|Critical].
-PROVIDERS: [local, engram, gentlePi, ruflo, ecc, context7, awesomeCopilot, ...].
+PROVIDERS: [local, engram, gentlePi, ecc, context7, awesomeCopilot, ...].
 PROCEDURE: [paso1 → paso2 → paso3].
 FILES: [N new | M modified].
 TESTS: [N new — all green].
@@ -459,6 +446,5 @@ PURPLE (purpleteam-coordinator — drives cyclic loop + persists learnings).
 
 > Full strict runtime behavior rules: → see STRICT_PROVIDER_RUNTIME.md
 
-Guardrails: provider selection follows level routing (never skip levels); Ruflo is CONSULT
-by default (DELEGATE requires explicit activation); providers report availability before
+Guardrails: provider selection follows level routing (never skip levels); providers report availability before
 invocation; on provider failure: block task, report error, do not silently fallback.
